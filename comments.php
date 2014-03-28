@@ -50,8 +50,8 @@ if (post_password_required()) {
 
         <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
             <p>You must be <a href="<?php echo wp_login_url(get_permalink()); ?>">logged in</a> to post a comment.</p>
-        <?php else : ?>
-			<?php comment_form(); ?>
+        <?php else :
+            comment_form(); ?>
 
             <div class="comment-rss"><?php post_comments_feed_link('Subscribe to Comments via RSS'); ?></div>
 
