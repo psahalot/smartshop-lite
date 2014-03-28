@@ -971,7 +971,11 @@ div.wpcf7
 }
 .comment-form, .comments
 {
-    margin:0px 20px 20px 30px;
+    margin:40px 0 15px;
+}
+
+.form-allowed-tags {
+    display: none; 
 }
 
 .commentlist
@@ -1743,16 +1747,14 @@ h4.single-product-price {
     box-shadow: 3px 3px 0px #EEE;
 }
 
-#commentsubmit {
+#commentsubmit,
+.form-submit input[type="submit"] {
     cursor: pointer;
     font-size: 12px;
-    color: #969696;
+    color: #fff;
     padding: 8px 0px;
     width: 100px !important;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border: 1px solid #CCC;
+    background: #f84545; 
 }
 #commentsubmit:hover { background: #fff; color:#333; }
 
