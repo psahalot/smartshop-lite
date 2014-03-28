@@ -13,7 +13,6 @@ if (!defined('SS_THEME_URL')) {
 // extra theme files
 include(SS_THEME_DIR . '/includes/scripts.php');
 include(SS_THEME_DIR . '/includes/edd-config.php');
-include(SS_THEME_DIR . '/includes/widgets/simple-social-icons.php');
 
 
 /* Include plugin activation file to install plugins */
