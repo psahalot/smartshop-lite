@@ -231,5 +231,4 @@ function smartshop_excerpt_more($more) {
         return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read More</a>';
     }
 }
-
-add_filter('excerpt_more', 'smartshop_excerpt_more');
+add_filter('excerpt_more', 'smartshop   _excerpt_more');
