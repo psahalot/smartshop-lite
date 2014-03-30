@@ -202,9 +202,9 @@ if (!function_exists('smartshop_image_sizes')) {
 }
 add_action('init', 'smartshop_image_sizes');
 
-add_action('wp_enqueue_scripts', 'edd_load_fonts');
+add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
-function edd_load_fonts() {
+function smartshop_load_fonts() {
     wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700|Merriweather:300,700');
 
 
@@ -214,7 +214,7 @@ function edd_load_fonts() {
     wp_enqueue_style('fontawesome');
 }
 
-function custom_excerpt_length($length) {
+function smartshop_excerpt_length($length) {
     if (is_archive() || is_front_page()) {
         return 15;
     } else {
@@ -222,9 +222,9 @@ function custom_excerpt_length($length) {
     }
 }
 
-add_filter('excerpt_length', 'custom_excerpt_length', 999);
+add_filter('excerpt_length', 'smartshop_excerpt_length', 999);
 
-function new_excerpt_more($more) {
+function smartshop_excerpt_more($more) {
     if (is_front_page()) {
         return '...';
     } else {
@@ -232,4 +232,4 @@ function new_excerpt_more($more) {
     }
 }
 
-add_filter('excerpt_more', 'new_excerpt_more');
+add_filter('excerpt_more', 'smartshop_excerpt_more');

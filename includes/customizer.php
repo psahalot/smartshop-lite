@@ -169,7 +169,7 @@ function smartshop_customizer($wp_customize) {
 
 add_action('customize_register', 'smartshop_customizer', 11);
 
-function generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true) {
+function smartshop_generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true) {
     $return = '';
     $mod = get_theme_mod($mod_name);
     if (!empty($mod)) {
@@ -182,17 +182,17 @@ function generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '',
     return $return;
 }
 
-function header_output() {
+function smartshop_header_output() {
     ?>
     <!--Customizer CSS--> 
     <style type="text/css">
-    <?php generate_css('#site-name', 'color', 'title_textcolor', ''); ?>
-    <?php generate_css('.sidebarwidget a', 'color', 'link_textcolor', ''); ?>
-    <?php generate_css('.site-logo', 'display', 'name', 'none'); ?>
+    <?php smartshop_generate_css('#site-name', 'color', 'title_textcolor', ''); ?>
+    <?php smartshop_generate_css('.sidebarwidget a', 'color', 'link_textcolor', ''); ?>
+    <?php smartshop_generate_css('.site-logo', 'display', 'name', 'none'); ?>
     </style> 
     <!--/Customizer CSS-->
     <?php
 }
 
 // Output custom CSS to live site
-add_action('wp_head', 'header_output');
+add_action('wp_head', 'smartshop_header_output');

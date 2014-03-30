@@ -1,6 +1,6 @@
 <?php
 
-if(!function_exists('edds_load_scripts')) {
+if(!function_exists('smartshop_load_scripts')) {
 	function edds_load_scripts() {
 	
 		// scripts
@@ -16,4 +16,4 @@ if(!function_exists('edds_load_scripts')) {
 		
 	}
 }
-add_action('wp_enqueue_scripts', 'edds_load_scripts');
+add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
