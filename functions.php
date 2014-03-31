@@ -97,7 +97,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Shop Sidebar',
         'id' => 'sidebar_shop',
-        'description' => esc_html__('Appears in the sidebar on shops except the optional Front Page template, which has its own widgets', 'smartshop'),
+        'description' => esc_html__('Appears in the sidebar on shop/product pages.', 'smartshop'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h3 class="widget_title">',
@@ -109,6 +109,7 @@ if (function_exists('register_sidebar')) {
         'name' => 'Header Widget',
         'id' => 'header_widget',
         'before_title' => '<h3 class="widget_title">',
+        'description' => esc_html__('Appears in the top right section of header', 'smartshop'),
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="header-widget %2$s">',
         'after_widget' => '</div>'
@@ -116,6 +117,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home Featured',
         'id' => 'home-featured',
+        'description' => esc_html__('Appears on the front page below navigation. Apt for adding featured slider', 'smartshop'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="widget_title">',
@@ -124,6 +126,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home CTA',
         'id' => 'home_cta',
+        'description' => esc_html__('Appears on the front page above featured posts and products listing', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="home-cta-widget %2$s">',
@@ -133,7 +136,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home Sidebar',
         'id' => 'home_sidebar',
-        'description' => esc_html__('This sidebar appears on the right of featured posts on front page','smartshop'),
+        'description' => esc_html__('Appears on the right of featured posts on front page','smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
@@ -143,6 +146,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home #1',
         'id' => 'home_one',
+        'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="home-widget %2$s">',
@@ -152,6 +156,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home #2',
         'id' => 'home_two',
+        'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="home-widget %2$s">',
@@ -160,6 +165,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home #3',
         'id' => 'home_three',
+        'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="home-widget %2$s">',
