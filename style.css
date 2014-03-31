@@ -478,9 +478,8 @@ div, input, ul, li
 }
 
 .nav-menu > li { 
-    display: table-cell;
-    float: none;
-    width: 1%; 
+    display: block;
+    float: left;
 }
 
 .nav-menu > li > a,
@@ -2031,11 +2030,15 @@ IdeaBox Social Icons
         border-left:20px solid #111;
     }
 
-    .main-navigation li ul li a{
+    .main-navigation li ul ul {
+        left: 0px !important; 
+    }
+    
+    .main-navigation li ul li a {
         width:100%;
     }
     
-    .full-width .main-navigation li ul li a{
+    .full-width .main-navigation li ul li a {
         width:100%;
     }
     .main-navigation a {

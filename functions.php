@@ -9,9 +9,6 @@ if (!defined('SS_THEME_URL')) {
     define('SS_THEME_URL', get_template_directory_uri());
 }
 
-
-// extra theme files
-include(SS_THEME_DIR . '/includes/scripts.php');
 include(SS_THEME_DIR . '/includes/edd-config.php');
 
 
@@ -29,6 +26,23 @@ if (!isset($content_width))
 add_editor_style();
 
 add_theme_support('automatic-feed-links');
+
+function smartshop_load_scripts() {
+
+    // scripts
+    wp_enqueue_script('jquery');
+    if (is_singular())
+        wp_enqueue_script('comment-reply');
+    wp_enqueue_script('scripts', SS_THEME_URL . '/js/css3-mediaqueries.js');
+
+    // Adds JavaScript for handling the navigation menu hide-and-show behavior.
+    wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true);
+
+    // styles
+    wp_enqueue_style('styles', SS_THEME_URL . '/style.css');
+}
+
+add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 
 /*
  * This theme supports all available post formats by default.
@@ -83,7 +97,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Shop Sidebar',
         'id' => 'sidebar_shop',
-        'description' => esc_html__('Appears in the sidebar on shops except the optional Front Page template, which has its own widgets', 'quark'),
+        'description' => esc_html__('Appears in the sidebar on shops except the optional Front Page template, which has its own widgets', 'smartshop'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
         'after_widget' => '</li>',
         'before_title' => '<h3 class="widget_title">',
@@ -119,6 +133,7 @@ if (function_exists('register_sidebar')) {
     register_sidebar(array(
         'name' => 'Home Sidebar',
         'id' => 'home_sidebar',
+        'description' => esc_html__('This sidebar appears on the right of featured posts on front page','smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
@@ -231,4 +246,5 @@ function smartshop_excerpt_more($more) {
         return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read More</a>';
     }
 }
-add_filter('excerpt_more', 'smartshop   _excerpt_more');
+
+add_filter('excerpt_more', 'smartshop_excerpt_more');
