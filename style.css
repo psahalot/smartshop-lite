@@ -226,6 +226,10 @@ li {
     display: inline;
 }
 
+select {
+    max-width: 100%; 
+}
+
 button
 input[type="submit"],
 input[type="button"],
@@ -478,8 +482,9 @@ div, input, ul, li
 }
 
 .nav-menu > li { 
-    display: block;
-    float: left;
+    display: table-cell;
+    float: none;
+    width: 1%; 
 }
 
 .nav-menu > li > a,
