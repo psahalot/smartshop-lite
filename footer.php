@@ -9,13 +9,13 @@
                 </div><!--end .col grid_4_of_12-->
             <?php } ?>
 
-            <?php if (is_active_sidebar('footer_one')) { ?>
+            <?php if (is_active_sidebar('footer_two')) { ?>
                 <div class="col grid_4_of_12 footer-widget">
                     <?php dynamic_sidebar('footer_two'); ?>
                 </div><!--end .col grid_4_of_12-->
             <?php } ?>
 
-            <?php if (is_active_sidebar('footer_one')) { ?>
+            <?php if (is_active_sidebar('footer_three')) { ?>
                 <div class="col grid_4_of_12 footer-widget">
                     <?php dynamic_sidebar('footer_three'); ?>
                 </div><!--end .col grid_4_of_12-->

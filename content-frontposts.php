@@ -64,10 +64,8 @@ if (get_theme_mod('smartshop_front_featured_posts_check')) {
                 <?php else : ?>
 
 
-                    <h2 class="center">Not Found</h2>
-
-                    <p class="center">Sorry, but you are looking for something that isn't here.</p>
-
+                    <h2 class="title"><?php _e('Not Found','smartshop'); ?></h2>
+                    <p><?php _e('Sorry, but you are looking for something that is not here.','smartshop'); ?></p>
                     <?php get_search_form(); ?>
 
                 <?php endif; ?>

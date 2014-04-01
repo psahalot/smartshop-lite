@@ -12,8 +12,8 @@
 
             <div class="entry clearfix">
                 <div <?php post_class(); ?>"  id="post-<?php the_ID(); ?>">
-                    <h2 class="title">Not Found</h2>
-                    <p>Sorry, but you are looking for something that isn't here.</p>
+                    <h2 class="title"><?php _e('Not Found','smartshop'); ?></h2>
+                    <p><?php _e('Sorry, but you are looking for something that is not here.','smartshop'); ?></p>
                     <?php get_search_form(); ?>
                 </div><!--end .entry-->
             </div><!--end .entry-->

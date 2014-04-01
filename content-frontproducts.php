@@ -85,9 +85,9 @@ if (class_exists('Easy_Digital_Downloads')) {
                         <?php endwhile; ?>
                     <?php else : ?>
 
-                        <h2 class="center">Not Found</h2>
-                        <p class="center">Sorry, but you are looking for something that isn't here.</p>
-                <?php get_search_form(); ?>
+                             <h2 class="title"><?php _e('Not Found','smartshop'); ?></h2>
+                    <p><?php _e('Sorry, but you are looking for something that is not here.','smartshop'); ?></p>
+                    <?php get_search_form(); ?>
             <?php endif; ?>
         <?php } ?>
             </div> <!--end #featured-products -->

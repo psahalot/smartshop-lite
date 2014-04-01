@@ -35,9 +35,9 @@
                 <?php else : ?>
 
                     <div class="entry">
-                        <h2 class="title">Not Found</h2>
-                        <p>Sorry, but you are looking for something that isn't here.</p>
-                        <?php get_search_form(); ?>
+                        <h2 class="title"><?php _e('Not Found','smartshop'); ?></h2>
+                    <p><?php _e('Sorry, but you are looking for something that is not here.','smartshop'); ?></p>
+                    <?php get_search_form(); ?>
                     </div><!--end .entry-->
 
                 <?php endif; ?>
