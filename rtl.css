@@ -40,8 +40,6 @@ See: http://codex.wordpress.org/Right_to_Left_Language_Support
 
 .row:after { clear: both; }
 
-.last { margin-left: 0px !important; float: left; }
-
 /* ==========================================================================
    Twelve Column Grid
    ========================================================================== */
