@@ -105,6 +105,7 @@ if (!function_exists('smartshop_theme_setup')) {
     }
 
 }
+add_action( 'after_setup_theme', 'smartshop_theme_setup' );
 
 function smartshop_load_scripts() {
 
