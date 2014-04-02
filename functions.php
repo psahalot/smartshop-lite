@@ -86,14 +86,13 @@ if (!function_exists('smartshop_theme_setup')) {
                 set_post_thumbnail_size(716, 400, true); // default post thumbnail size
                 add_image_size('product-image', 368, 200, true); // product thumbnail
                 add_image_size('product-image-large', 716, 400, true); // main product image
-              
+                add_image_size('home-slider', 1140, 450, true); //home slider image size
+                add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post              
             }
 
         }
         add_action('init', 'smartshop_image_sizes');
-        add_image_size('home-slider', 1140, 450, true); //home slider image size
-        add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post
-
+        
 
 // set up custom nav menus
         if (function_exists('register_nav_menus')) {
