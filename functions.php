@@ -18,14 +18,93 @@ include get_template_directory() . '/includes/plugin-activation/plugin-details.p
 // customizer addition
 require get_template_directory() . '/includes/customizer.php';
 
-// Set content width 
-if (!isset($content_width))
-    $content_width = 716;
+if (!function_exists('smartshop_theme_setup')) {
+
+    /**
+     * Make theme available for translation
+     * Translations can be filed in the /languages/ directory
+     * If you're building a theme based on Tatva, use a find and replace
+     * to change 'tatva' to the name of your theme in all the template files
+     */
+    load_theme_textdomain( 'smartshop', trailingslashit( get_template_directory_uri() ) . 'languages' );
+
+    function smartshop_theme_setup() {
+        // Set content width 
+        if (!isset($content_width))
+            $content_width = 716;
 
 // This theme styles the visual editor with editor-style.css to match the theme style.
-add_editor_style();
+        add_editor_style();
 
-add_theme_support('automatic-feed-links');
+        add_theme_support('automatic-feed-links');
+
+        /*
+         * This theme supports all available post formats by default.
+         * See http://codex.wordpress.org/Post_Formats
+         */
+        add_theme_support('post-formats', array(
+            'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
+        ));
+
+
+// Enable support for Custom Backgrounds
+        add_theme_support('custom-background', array(
+            // Background color default
+            'default-color' => '222',
+            // Background image default
+            'default-image' => '',
+            'header-text' => 'true',
+            'flex-height' => 'true',
+            'flex-width' => 'true'
+        ));
+
+
+// Enable support for Custom Headers (or in our case, a custom logo)
+        add_theme_support('custom-header', array(
+            // Header image default
+            'default-image' => '',
+            // Header text display default
+            'header-text' => false,
+            // Header text color default
+            'default-text-color' => '000',
+            // Flexible width
+            'flex-width' => true,
+            // Header image width (in pixels)
+            'width' => 300,
+            // Flexible height
+            'flex-height' => true,
+            // Header image height (in pixels)
+            'height' => 80
+        ));
+
+//adds post thumbnail support - new in Wordpress 2.9
+        add_theme_support('post-thumbnails');
+
+        if (!function_exists('smartshop_image_sizes')) {
+
+            function smartshop_image_sizes() {
+                set_post_thumbnail_size(716, 400, true); // default post thumbnail size
+                add_image_size('product-image', 368, 200, true); // product thumbnail
+                add_image_size('product-image-large', 716, 400, true); // main product image
+                add_image_size('home-slider', 1140, 450, true); //home slider image size
+                add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post
+            }
+
+        }
+        add_action('init', 'smartshop_image_sizes');
+
+
+// set up custom nav menus
+        if (function_exists('register_nav_menus')) {
+            register_nav_menus(
+                    array(
+                        'main_nav' => 'Main Nav',
+                    )
+            );
+        }
+    }
+
+}
 
 function smartshop_load_scripts() {
 
@@ -33,10 +112,10 @@ function smartshop_load_scripts() {
     wp_enqueue_script('jquery');
     if (is_singular())
         wp_enqueue_script('comment-reply');
-    wp_enqueue_script('scripts', SS_THEME_URL . '/js/css3-mediaqueries.js');
+    wp_enqueue_script('scripts', SS_THEME_URL . '/assets/js/css3-mediaqueries.js');
 
     // Adds JavaScript for handling the navigation menu hide-and-show behavior.
-    wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true);
+    wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
 
     // styles
     wp_enqueue_style('styles', SS_THEME_URL . '/style.css');
@@ -44,49 +123,22 @@ function smartshop_load_scripts() {
 
 add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 
-/*
- * This theme supports all available post formats by default.
- * See http://codex.wordpress.org/Post_Formats
- */
-add_theme_support('post-formats', array(
-    'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
-));
+add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
+
+function smartshop_load_fonts() {
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700|Merriweather:300,700');
 
 
-// Enable support for Custom Backgrounds
-add_theme_support('custom-background', array(
-    // Background color default
-    'default-color' => '222',
-    // Background image default
-    'default-image' => '',
-    'header-text' => 'true',
-    'flex-height' => 'true',
-    'flex-width' => 'true'
-));
-
-
-// Enable support for Custom Headers (or in our case, a custom logo)
-add_theme_support('custom-header', array(
-    // Header image default
-    'default-image' => '',
-    // Header text display default
-    'header-text' => false,
-    // Header text color default
-    'default-text-color' => '000',
-    // Flexible width
-    'flex-width' => true,
-    // Header image width (in pixels)
-    'width' => 300,
-    // Flexible height
-    'flex-height' => true,
-    // Header image height (in pixels)
-    'height' => 80
-));
+    // Register and enqueue our icon font
+    // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
+    wp_register_style('fontawesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
+    wp_enqueue_style('fontawesome');
+}
 
 if (function_exists('register_sidebar')) {
 
     register_sidebars(1, array(
-        'name' => 'Sidebar Right',
+        'name' => __('Sidebar Right', 'smartshop'),
         'id' => 'sidebar_right',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
@@ -95,7 +147,7 @@ if (function_exists('register_sidebar')) {
     ));
 
     register_sidebar(array(
-        'name' => 'Shop Sidebar',
+        'name' => __('Shop Sidebar', 'smartshop'),
         'id' => 'sidebar_shop',
         'description' => esc_html__('Appears in the sidebar on shop/product pages.', 'smartshop'),
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
@@ -106,7 +158,7 @@ if (function_exists('register_sidebar')) {
 
 
     register_sidebar(array(
-        'name' => 'Header Widget',
+        'name' => __('Header Widget', 'smartshop'),
         'id' => 'header_widget',
         'before_title' => '<h3 class="widget_title">',
         'description' => esc_html__('Appears in the top right section of header', 'smartshop'),
@@ -115,7 +167,7 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>'
     ));
     register_sidebar(array(
-        'name' => 'Home Featured',
+        'name' => __('Home Featured', 'smartshop'),
         'id' => 'home-featured',
         'description' => esc_html__('Appears on the front page below navigation. Apt for adding featured slider', 'smartshop'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -124,7 +176,7 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h3>'
     ));
     register_sidebar(array(
-        'name' => 'Home CTA',
+        'name' => __('Home CTA', 'smartshop'),
         'id' => 'home_cta',
         'description' => esc_html__('Appears on the front page above featured posts and products listing', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
@@ -134,9 +186,9 @@ if (function_exists('register_sidebar')) {
     ));
 
     register_sidebar(array(
-        'name' => 'Home Sidebar',
+        'name' => __('Home Sidebar', 'smartshop'),
         'id' => 'home_sidebar',
-        'description' => esc_html__('Appears on the right of featured posts on front page','smartshop'),
+        'description' => esc_html__('Appears on the right of featured posts on front page', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<li id="%1$s" class="widget %2$s">',
@@ -144,7 +196,7 @@ if (function_exists('register_sidebar')) {
     ));
 
     register_sidebar(array(
-        'name' => 'Home #1',
+        'name' => __('Home #1', 'smartshop'),
         'id' => 'home_one',
         'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
@@ -154,7 +206,7 @@ if (function_exists('register_sidebar')) {
     ));
 
     register_sidebar(array(
-        'name' => 'Home #2',
+        'name' => __('Home #2', 'smartshop'),
         'id' => 'home_two',
         'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
@@ -163,7 +215,7 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>'
     ));
     register_sidebar(array(
-        'name' => 'Home #3',
+        'name' => __('Home #3', 'smartshop'),
         'id' => 'home_three',
         'description' => esc_html__('Appears below the front page featured widget area.', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
@@ -173,7 +225,7 @@ if (function_exists('register_sidebar')) {
     ));
 
     register_sidebars(1, array(
-        'name' => 'Footer #1',
+        'name' => __('Footer #1', 'smartshop'),
         'id' => 'footer_one',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
@@ -181,7 +233,7 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>'
     ));
     register_sidebars(1, array(
-        'name' => 'Footer #2',
+        'name' => __('Footer #2', 'smartshop'),
         'id' => 'footer_two',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
@@ -189,50 +241,13 @@ if (function_exists('register_sidebar')) {
         'after_widget' => '</div>'
     ));
     register_sidebars(1, array(
-        'name' => 'Footer #3',
+        'name' => __('Footer #3', 'smartshop'),
         'id' => 'footer_three',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>'
     ));
-}
-
-// set up custom nav menus
-if (function_exists('register_nav_menus')) {
-    register_nav_menus(
-            array(
-                'main_nav' => 'Main Nav',
-            )
-    );
-}
-
-//adds post thumbnail support - new in Wordpress 2.9
-add_theme_support('post-thumbnails');
-
-if (!function_exists('smartshop_image_sizes')) {
-
-    function smartshop_image_sizes() {
-        set_post_thumbnail_size(716, 400, true); // default post thumbnail size
-        add_image_size('product-image', 368, 200, true); // product thumbnail
-        add_image_size('product-image-large', 716, 400, true); // main product image
-        add_image_size('home-slider', 1140, 450, true); //home slider image size
-        add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post
-    }
-
-}
-add_action('init', 'smartshop_image_sizes');
-
-add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
-
-function smartshop_load_fonts() {
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700|Merriweather:300,700');
-
-
-    // Register and enqueue our icon font
-    // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-    wp_register_style('fontawesome', trailingslashit(get_template_directory_uri()) . 'css/font-awesome.min.css', array(), '4.0.3', 'all');
-    wp_enqueue_style('fontawesome');
 }
 
 function smartshop_excerpt_length($length) {
@@ -249,7 +264,7 @@ function smartshop_excerpt_more($more) {
     if (is_front_page()) {
         return '...';
     } else {
-        return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read More</a>';
+        return ' <a class="read-more" href="' . get_permalink(get_the_ID()) . '">' . __('Read More', 'smartshop') . '</a>';
     }
 }
 
