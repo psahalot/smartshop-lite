@@ -27,7 +27,11 @@
     <div class="row copyright">
         <div class="col grid_12_of_12">
             <?php if (get_theme_mod('smartshop_footer_footer_text')=='') { ?>
-                 <p class="footer-des"><a href="http://ideaboxthemes.com/themes/smart-shop-wordpress-theme/"><?php _e('Smart Shop WordPress theme by IdeaBox','smartshop'); ?></a></p>
+                 <p class="footer-des">
+                     <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
+                        <?php _e('Smart Shop WordPress theme by IdeaBox','smartshop'); ?>
+                     </a>
+                 </p>
             <?php } else { ?>   
                  <p class="footer-des"><?php echo wpautop(get_theme_mod('smartshop_footer_footer_text')); ?></p>
             <?php } ?> 
