@@ -7,7 +7,3 @@ SmarstShop is a WordPress theme perfectly built for online and offline business 
 It has a widgetized home page with support for displaying latest products and posts. 
 Comes with built in styling for popular form plugins like Gravity Forms and Contact Form 7.
 The theme is responsive so it will look good on every screen, from mobiles and tablets up to large desktop displays.
-
-
-
-
