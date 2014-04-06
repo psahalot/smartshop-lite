@@ -26,14 +26,14 @@ if (!function_exists('smartshop_theme_setup')) {
      * If you're building a theme based on Tatva, use a find and replace
      * to change 'tatva' to the name of your theme in all the template files
      */
-    load_theme_textdomain( 'smartshop', trailingslashit( get_template_directory_uri() ) . 'languages' );
+    load_theme_textdomain('smartshop', trailingslashit(get_template_directory_uri()) . 'languages');
 
     function smartshop_theme_setup() {
         // Set content width 
         if (!isset($content_width))
             $content_width = 716;
 
-// This theme styles the visual editor with editor-style.css to match the theme style.
+        // This theme styles the visual editor with editor-style.css to match the theme style.
         add_editor_style();
 
         add_theme_support('automatic-feed-links');
@@ -47,7 +47,7 @@ if (!function_exists('smartshop_theme_setup')) {
         ));
 
 
-// Enable support for Custom Backgrounds
+        // Enable support for Custom Backgrounds
         add_theme_support('custom-background', array(
             // Background color default
             'default-color' => '222',
@@ -59,7 +59,7 @@ if (!function_exists('smartshop_theme_setup')) {
         ));
 
 
-// Enable support for Custom Headers (or in our case, a custom logo)
+        // Enable support for Custom Headers (or in our case, a custom logo)
         add_theme_support('custom-header', array(
             // Header image default
             'default-image' => '',
@@ -77,24 +77,15 @@ if (!function_exists('smartshop_theme_setup')) {
             'height' => 80
         ));
 
-//adds post thumbnail support - new in Wordpress 2.9
+        //adds post thumbnail support - new in Wordpress 2.9
         add_theme_support('post-thumbnails');
 
-        if (!function_exists('smartshop_image_sizes')) {
-
-            function smartshop_image_sizes() {
-                set_post_thumbnail_size(716, 400, true); // default post thumbnail size
-                add_image_size('product-image', 368, 200, true); // product thumbnail
-                add_image_size('product-image-large', 716, 400, true); // main product image
-                add_image_size('home-slider', 1140, 450, true); //home slider image size
-                add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post              
-            }
-
-        }
-        add_action('init', 'smartshop_image_sizes');
-        
-
-// set up custom nav menus
+        set_post_thumbnail_size(716, 400, true); // default post thumbnail size
+        add_image_size('product-image', 368, 200, true); // product thumbnail
+        add_image_size('product-image-large', 716, 400, true); // main product image
+        add_image_size('home-slider', 1140, 450, true); //home slider image size
+        add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post              
+        // set up custom nav menus
         if (function_exists('register_nav_menus')) {
             register_nav_menus(
                     array(
@@ -105,21 +96,20 @@ if (!function_exists('smartshop_theme_setup')) {
     }
 
 }
-add_action( 'after_setup_theme', 'smartshop_theme_setup' );
+add_action('after_setup_theme', 'smartshop_theme_setup');
 
 function smartshop_load_scripts() {
 
-    // scripts
-    wp_enqueue_script('jquery');
-    if (is_singular())
+    if (is_singular()) {
         wp_enqueue_script('comment-reply');
-    wp_enqueue_script('scripts', SS_THEME_URL . '/assets/js/css3-mediaqueries.js');
+    }
+        wp_enqueue_script('smartshop-media-queries', SS_THEME_URL . '/assets/js/css3-mediaqueries.js');
 
-    // Adds JavaScript for handling the navigation menu hide-and-show behavior.
-    wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
+        // Adds JavaScript for handling the navigation menu hide-and-show behavior.
+        wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
 
-    // styles
-    wp_enqueue_style('styles', SS_THEME_URL . '/style.css');
+        // styles
+        wp_enqueue_style('smartshop-style', SS_THEME_URL . '/style.css');
 }
 
 add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
@@ -127,13 +117,11 @@ add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
 function smartshop_load_fonts() {
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700|Merriweather:300,700');
-
-
+    wp_enqueue_style('smartshop-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700');
+    
     // Register and enqueue our icon font
     // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-    wp_register_style('fontawesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
-    wp_enqueue_style('fontawesome');
+    wp_enqueue_style('smartshop-font-awesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
 }
 
 if (function_exists('register_sidebar')) {
