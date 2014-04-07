@@ -1530,6 +1530,13 @@ h4.single-product-price {
 * pagination
 ********************************/
 
+.nav-single {
+    padding: 10px; 
+}
+.nav-single .nav-next {
+    float: right; 
+}
+
 .pagination {
     clear: both;
     width: 100%;
