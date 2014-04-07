@@ -64,12 +64,13 @@ function smartshop_customizer($wp_customize) {
         ));
 
         // store front/archive item count
-        $wp_customize->add_setting('smartshop_store_front_featured_count', array('default' => 6));
+        $wp_customize->add_setting('smartshop_store_front_featured_count', array('default' => 3));
         $wp_customize->add_control('smartshop_store_front_featured_count', array(
             'label' => __('Number of Featured Products', 'smartshop'),
             'section' => 'smartshop_edd_options',
             'settings' => 'smartshop_store_front_featured_count',
             'priority' => 20,
+            'sanitize_callback' => 'sanitize_text_field',
         ));
 
         // store front/downloads archive headline
@@ -79,6 +80,7 @@ function smartshop_customizer($wp_customize) {
             'section' => 'smartshop_edd_options',
             'settings' => 'smartshop_edd_store_archives_title',
             'priority' => 30,
+            'sanitize_callback' => 'sanitize_text_field',
         ));
         // store front/downloads archive description
         $wp_customize->add_setting('smartshop_edd_store_archives_description', array('default' => null));
@@ -86,7 +88,7 @@ function smartshop_customizer($wp_customize) {
             'label' => __('Store/Download Archives Description', 'smartshop'),
             'section' => 'smartshop_edd_options',
             'settings' => 'smartshop_edd_store_archives_description',
-            'priority' => 40,
+            'priority' => 40,'sanitize_callback' => 'sanitize_text_field',
         )));
         // read more link
         $wp_customize->add_setting('smartshop_product_view_details', array('default' => __('View Details', 'smartshop')));
@@ -95,6 +97,7 @@ function smartshop_customizer($wp_customize) {
             'section' => 'smartshop_edd_options',
             'settings' => 'smartshop_product_view_details',
             'priority' => 50,
+            'sanitize_callback' => 'sanitize_text_field',
         ));
         // store front/archive item count
         $wp_customize->add_setting('smartshop_store_front_count', array('default' => 9));
@@ -103,6 +106,7 @@ function smartshop_customizer($wp_customize) {
             'section' => 'smartshop_edd_options',
             'settings' => 'smartshop_store_front_count',
             'priority' => 60,
+            'sanitize_callback' => 'sanitize_text_field',
         ));
     }
 
@@ -129,6 +133,7 @@ function smartshop_customizer($wp_customize) {
         'section' => 'smartshop_front_page_post_options',
         'settings' => 'smartshop_front_featured_posts_title',
         'priority' => 10,
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     // select number of posts for featured posts on front page
@@ -138,6 +143,7 @@ function smartshop_customizer($wp_customize) {
         'section' => 'smartshop_front_page_post_options',
         'settings' => 'smartshop_front_featured_posts_count',
         'priority' => 20,
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
 
@@ -148,6 +154,7 @@ function smartshop_customizer($wp_customize) {
         'section' => 'smartshop_front_page_post_options',
         'settings' => 'smartshop_front_featured_link_text',
         'priority' => 30,
+        'sanitize_callback' => 'sanitize_text_field',
     ));
 
     // Add footer text section
@@ -157,7 +164,8 @@ function smartshop_customizer($wp_customize) {
     ));
 
     $wp_customize->add_setting('smartshop_footer_footer_text', array(
-        'default' => __('', 'smartshop'),
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
     ));
     
     $wp_customize->add_control(new smartshop_customize_textarea_control($wp_customize, 'smartshop_footer_footer_text', array(

@@ -57,8 +57,7 @@ if (class_exists('Easy_Digital_Downloads')) {
                                                 <?php
                                                 if (edd_has_variable_prices(get_the_ID())) {
                                                     // if the download has variable prices, show the first one as a starting price
-                                                    echo 'Starting at: ';
-                                                    edd_price(get_the_ID());
+                                                    printf( __('Starting at: %s','smartshop'), edd_price(get_the_ID()));
                                                 } else {
                                                     edd_price(get_the_ID());
                                                 }
