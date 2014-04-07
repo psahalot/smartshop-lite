@@ -29,7 +29,6 @@
 
                         </div>
 
-
                     <?php endwhile; ?>
 
                 <?php else : ?>
@@ -53,6 +52,12 @@
                 }
                 ?>
             </div>
+            
+            <div class="nav-single">
+                <span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'smartshop' ) . '</span> %title' ); ?></span>
+                <span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'smartshop' ) . '</span>' ); ?></span>
+            </div><!-- .nav-single -->
+
         </div><!--end .col grid_8_of_12-->
 
         <div class="col grid_4_of_12 last right-sidebar">
