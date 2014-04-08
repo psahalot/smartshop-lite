@@ -15,7 +15,7 @@ if (class_exists('Easy_Digital_Downloads')) {
 
         <div class="store-info">
             <?php if (get_theme_mod('smartshop_edd_store_archives_title')) : ?>
-                <h2 class="store-title"><?php echo get_theme_mod('smartshop_edd_store_archives_title'); ?></h2>
+                <h2 class="store-title"><?php echo esc_html(get_theme_mod('smartshop_edd_store_archives_title')); ?></h2>
                 <?php endif; ?>
                 <?php if (get_theme_mod('smartshop_edd_store_archives_description')) : ?>
                 <div class="store-description">

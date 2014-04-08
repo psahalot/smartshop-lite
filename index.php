@@ -1,7 +1,15 @@
 <?php get_header(); ?>
 <div id="page-header-container" class="container">
     <div class="headsection row">
-        <h2 class="title">Blog</h2>
+        <h2 class="title">
+        <?php 
+            if (is_home()) {
+                _e('Blog','smartshop');
+            }
+            if(is_search()) {
+                printf(esc_html__('Search results for: %s','smartshop'),get_search_query()); 
+            } ?>
+        </h2>
     </div>
 </div>
 <div id="main-content-container" class="container">
@@ -14,12 +22,12 @@
 
                     <div <?php post_class('clearfix'); ?>  id="post-<?php the_ID(); ?>">
 
-                        <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                             <?php the_post_thumbnail('post-thumb'); ?>
                         </a>
 
                         <h2 class="title">
-                            <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                 <?php the_title(); ?>
                             </a>
                         </h2>

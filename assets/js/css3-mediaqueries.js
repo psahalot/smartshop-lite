@@ -1,3 +1,10 @@
+/* 
+ * License: MIT License
+ * License URI: http://opensource.org/licenses/MIT
+ * 
+ * Source URL: https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js
+ */
+
 if(typeof Object.create!=="function"){
 Object.create=function(o){
 function F(){

@@ -85,14 +85,10 @@ if (!function_exists('smartshop_theme_setup')) {
         add_image_size('product-image-large', 716, 400, true); // main product image
         add_image_size('home-slider', 1140, 450, true); //home slider image size
         add_image_size('post-thumb', 220, 180, true); // custom thumbnail for post              
+        
         // set up custom nav menus
-        if (function_exists('register_nav_menus')) {
-            register_nav_menus(
-                    array(
-                        'main_nav' => 'Main Nav',
-                    )
-            );
-        }
+        register_nav_menus( array( 'main_nav' => __('Main Navigation','smartshop') ));
+        
     }
 
 }
@@ -121,7 +117,7 @@ function smartshop_load_fonts() {
     
     // Register and enqueue our icon font
     // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
-    wp_enqueue_style('smartshop-font-awesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
+    wp_enqueue_style('font-awesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
 }
 
 if (function_exists('register_sidebar')) {

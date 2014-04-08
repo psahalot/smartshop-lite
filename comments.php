@@ -5,11 +5,11 @@
  */
 // Do not delete these lines
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-    die('Please do not load this page directly. Thanks!');
+    die(__('Please do not load this page directly. Thanks!','smartshop'));
 
 if (post_password_required()) {
     ?>
-    <p class="nocomments">This post is password protected. Enter the password to view comments.</p>
+    <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.','smartshop'); ?></p>
     <?php
     return;
 }
@@ -18,7 +18,9 @@ if (post_password_required()) {
 <!-- You can start editing here. -->
 
 <?php if (have_comments()) : ?>
-    <h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses'); ?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+    <h3 id="comments">
+        <?php printf( _n( 'One comment on &ldquo;%2$s&rdquo;', '%1$s commnets on &ldquo;%2$s&rdquo;', get_comments_number(), 'smartshop' ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );?>
+    </h3>
     <ol class="commentlist">
         <?php wp_list_comments('type=comment'); ?>
     </ol>
@@ -34,7 +36,7 @@ if (post_password_required()) {
 
     <?php else : // comments are closed ?>
         <!-- If comments are closed. -->
-        <p class="nocomments">Comments are closed.</p>
+        <p class="nocomments"><?php _e('Comments are closed.','smartshop'); ?></p>
 
     <?php endif; ?>
 <?php endif; ?>
@@ -49,11 +51,11 @@ if (post_password_required()) {
         </div>
 
         <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-            <p>You must be <a href="<?php echo wp_login_url(get_permalink()); ?>">logged in</a> to post a comment.</p>
+            <p><?php printf( __ ('You must be <a href="%s">logged in</a> to post a comment.','smartshop'), wp_login_url(get_permalink()) ); ?></p>
         <?php else :
             comment_form(); ?>
 
-            <div class="comment-rss"><?php post_comments_feed_link('Subscribe to Comments via RSS'); ?></div>
+            <div class="comment-rss"><?php post_comments_feed_link(__('Subscribe to Comments via RSS','smartshop')); ?></div>
 
         <?php endif; // If registration required and not logged in ?>
     </div>

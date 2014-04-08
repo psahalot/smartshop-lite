@@ -34,8 +34,7 @@
                                     <?php
                                     if (edd_has_variable_prices(get_the_ID())) {
                                         // if the download has variable prices, show the first one as a starting price
-                                        echo 'Starting at: ';
-                                        edd_price(get_the_ID());
+                                        printf( __('Starting at: %s','smartshop'), edd_price(get_the_ID()));
                                     } else {
                                         edd_price(get_the_ID());
                                     }
@@ -46,9 +45,9 @@
                             <?php if (function_exists('edd_price')) { ?>
                             <div class="product-buttons">
                             <?php if (!edd_has_variable_prices(get_the_ID())) { ?>
-                                <?php echo edd_get_purchase_link(get_the_ID(), 'Add to Cart', 'button'); ?>
+                                <?php echo edd_get_purchase_link(get_the_ID(), __('Add to Cart','smartshop'), 'button'); ?>
                         <?php } ?>
-                                <a href="<?php the_permalink(); ?>">View Details</a>
+                                <a href="<?php the_permalink(); ?>"><?php _e('View Details','smartshop'); ?></a>
                             </div><!--end .product-buttons-->
                     <?php } ?>
                     </div><!--end .product-->

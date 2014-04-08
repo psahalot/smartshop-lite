@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="page-header-container" class="container">
      <div class="headsection row">
-        <h2 class="title"><?php printf(esc_html__('Oops!', 'smartshop')); ?></h2>
+        <h2 class="title"><?php _e('Oops!', 'smartshop'); ?></h2>
     </div>
 </div>
 <div id="main-content-container" class="container">

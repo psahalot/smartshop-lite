@@ -21,10 +21,12 @@
                                 the_post_thumbnail();
                             }
                             ?> 
-                            <?php the_content('Read the rest of this entry &raquo;','smartshop'); ?>
+                            <?php the_content(__('Read the rest of this entry &raquo;','smartshop')); ?>
 
                             <p class="postinfo">
-                                <?php the_tags(__('Tags: ', ', ', '<br />','smartshop')); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link(__('Edit', '', ' | ','smartshop')); ?>  <?php printf(_n( 'One comment', '%s comments', get_comments_number(), 'smartshop'), number_format_i18n( get_comments_number() )); ?>
+                                <?php the_tags( __('Tags:', 'smartshop') . ' ', __(', ', 'smartshop'), '<br />' ); ?>
+                                <?php printf( __( 'Posted in %s', 'smartshop' ), the_category( __( ', ', 'smartshop' ) ) ); ?> 
+                                <?php printf(_n( 'One comment', '%s comments', get_comments_number(), 'smartshop'), number_format_i18n( get_comments_number() )); ?>
                             </p>
 
                         </div>

@@ -60,7 +60,7 @@ global $edd_options; // EDD plugin settings
             <div class="container" id="navigation-wrap">
                 <div class="row nav-collapse" id="main-nav">
                     <ul id="site-navigation" class="main-navigation">
-                        <h3 class="menu-toggle"><?php _e('Menu', 'twentytwelve'); ?></h3>
+                        <h3 class="menu-toggle"><?php _e('Menu', 'smartshop'); ?></h3>
                         <?php wp_nav_menu(array('theme_location' => 'main_nav', 'menu_class' => 'nav-menu')); ?>
                     </ul>
                 </div> <!-- end .nav-collaps#main-nav -->

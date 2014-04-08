@@ -32,7 +32,7 @@ if (get_theme_mod('smartshop_front_featured_posts_check')) {
             <div id="featured-posts" class="col grid_8_of_12">
                 <?php if (get_theme_mod('smartshop_front_featured_posts_title')) : ?>
                     <h3 class="featured-section-title">
-                        <?php echo get_theme_mod('smartshop_front_featured_posts_title'); ?>
+                        <?php echo esc_html(get_theme_mod('smartshop_front_featured_posts_title')); ?>
                     </h3>
                 <?php endif; ?>
                 <?php if ($featuredposts->have_posts()) : $i = 1; ?>
@@ -41,12 +41,12 @@ if (get_theme_mod('smartshop_front_featured_posts_check')) {
 
                         <div <?php post_class('clearfix home-featured'); ?>  id="post-<?php the_ID(); ?>">
 
-                            <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                 <?php the_post_thumbnail('post-thumb'); ?>
                             </a>
 
                             <h3 class="title">
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                     <?php the_title(); ?>
                                 </a>
                             </h3>

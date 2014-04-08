@@ -4,7 +4,7 @@ Author URI: http://ideaboxthemes.com
 Tags: red, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 3.8
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,8 @@ Install by uploading the theme zip file:
 
 
 == Credits ==
+
+Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, help and code improvements 
 
 SmartShop utilises the following awesomeness:
 

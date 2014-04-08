@@ -2,7 +2,12 @@
  * navigation.js
  *
  * Handles toggling the navigation menu for small screens.
+ *
+ * 
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
+
 ( function() {
 	var nav = document.getElementById( 'site-navigation' ), button, menu;
 	if ( ! nav )

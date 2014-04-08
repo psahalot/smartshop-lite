@@ -18,19 +18,19 @@ if( function_exists('edd_get_settings') ) {
 	
 	function edds_set_download_labels($labels) {
 		$labels = array(
-			'name' => _x('Products', 'post type general name', 'dsc'),
-			'singular_name' => _x('Product', 'post type singular name', 'dsc'),
-			'add_new' => __('Add New', 'dsc'),
-			'add_new_item' => __('Add New Product', 'dsc'),
-			'edit_item' => __('Edit Product', 'dsc'),
-			'new_item' => __('New Product', 'dsc'),
-			'all_items' => __('All Products', 'dsc'),
-			'view_item' => __('View Product', 'dsc'),
-			'search_items' => __('Search Products', 'dsc'),
-			'not_found' =>  __('No Products found', 'dsc'),
-			'not_found_in_trash' => __('No Products found in Trash', 'dsc'), 
+			'name' => _x('Products', 'post type general name', 'smartshop'),
+			'singular_name' => _x('Product', 'post type singular name', 'smartshop'),
+			'add_new' => __('Add New', 'smartshop'),
+			'add_new_item' => __('Add New Product', 'smartshop'),
+			'edit_item' => __('Edit Product', 'smartshop'),
+			'new_item' => __('New Product', 'smartshop'),
+			'all_items' => __('All Products', 'smartshop'),
+			'view_item' => __('View Product', 'smartshop'),
+			'search_items' => __('Search Products', 'smartshop'),
+			'not_found' =>  __('No Products found', 'smartshop'),
+			'not_found_in_trash' => __('No Products found in Trash', 'smartshop'), 
 			'parent_item_colon' => '',
-			'menu_name' => __('Products', 'dsc')
+			'menu_name' => __('Products', 'smartshop')
 		);
 		return $labels;
 	}
@@ -43,17 +43,17 @@ if( function_exists('edd_get_settings') ) {
 	
 	function edds_set_category_labels($labels) {
 		$labels = array(
-			'name' => _x( 'Types', 'taxonomy general name', 'edds' ),
-			'singular_name' => _x( 'Type', 'taxonomy singular name', 'edds' ),
-			'search_items' =>  __( 'Search Types', 'edds'  ),
-			'all_items' => __( 'All Types', 'edds'  ),
-			'parent_item' => __( 'Parent Type', 'edds'  ),
-			'parent_item_colon' => __( 'Parent Type:', 'edds'  ),
-			'edit_item' => __( 'Edit Type', 'edds'  ), 
-			'update_item' => __( 'Update Type', 'edds'  ),
-			'add_new_item' => __( 'Add New Type', 'edds'  ),
-			'new_item_name' => __( 'New Type', 'edds'  ),
-			'menu_name' => __( 'Types', 'edds'  ),
+			'name' => _x( 'Types', 'taxonomy general name', 'smartshop' ),
+			'singular_name' => _x( 'Type', 'taxonomy singular name', 'smartshop' ),
+			'search_items' =>  __( 'Search Types', 'smartshop'  ),
+			'all_items' => __( 'All Types', 'smartshop'  ),
+			'parent_item' => __( 'Parent Type', 'smartshop'  ),
+			'parent_item_colon' => __( 'Parent Type:', 'smartshop'  ),
+			'edit_item' => __( 'Edit Type', 'smartshop'  ), 
+			'update_item' => __( 'Update Type', 'smartshop'  ),
+			'add_new_item' => __( 'Add New Type', 'smartshop'  ),
+			'new_item_name' => __( 'New Type', 'smartshop'  ),
+			'menu_name' => __( 'Types', 'smartshop'  ),
 		);
 		return $labels;
 	}
@@ -62,17 +62,17 @@ if( function_exists('edd_get_settings') ) {
 	
 	function edds_set_tag_labels($labels) {
 		$labels = array(
-			'name' => _x( 'Features', 'taxonomy general name', 'edds' ),
-			'singular_name' => _x( 'Feature', 'taxonomy singular name', 'edds' ),
-			'search_items' =>  __( 'Search Features', 'edds'  ),
-			'all_items' => __( 'All Features', 'edds'  ),
-			'parent_item' => __( 'Parent Feature', 'edds'  ),
-			'parent_item_colon' => __( 'Parent Feature:', 'edds'  ),
-			'edit_item' => __( 'Edit Feature', 'edds'  ), 
-			'update_item' => __( 'Update Feature', 'edds'  ),
-			'add_new_item' => __( 'Add New Feature', 'edds'  ),
-			'new_item_name' => __( 'New Feature', 'edds'  ),
-			'menu_name' => __( 'Features', 'edds'  ),
+			'name' => _x( 'Features', 'taxonomy general name', 'smartshop' ),
+			'singular_name' => _x( 'Feature', 'taxonomy singular name', 'smartshop' ),
+			'search_items' =>  __( 'Search Features', 'smartshop'  ),
+			'all_items' => __( 'All Features', 'smartshop'  ),
+			'parent_item' => __( 'Parent Feature', 'smartshop'  ),
+			'parent_item_colon' => __( 'Parent Feature:', 'smartshop'  ),
+			'edit_item' => __( 'Edit Feature', 'smartshop'  ), 
+			'update_item' => __( 'Update Feature', 'smartshop'  ),
+			'add_new_item' => __( 'Add New Feature', 'smartshop'  ),
+			'new_item_name' => __( 'New Feature', 'smartshop'  ),
+			'menu_name' => __( 'Features', 'smartshop'  ),
 		);
 		return $labels;
 	}
