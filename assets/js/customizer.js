@@ -38,9 +38,9 @@
 		} );
 	} );
 	//Update site Title color in real time...
-	wp.customize( 'title_textcolor', function( value ) {
+	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
-			$('#logo-wrap h1').css('color', to );
+			$('.site-title a').css('color', to );
 		} );
 	} );
 	
