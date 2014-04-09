@@ -29,7 +29,7 @@ if (class_exists('Easy_Digital_Downloads')) {
 
                 <?php
                 if (class_exists('Easy_Digital_Downloads')) {
-                    $per_page = intval(get_theme_mod('smartshop_store_front_featured_count'));
+                    $per_page = absint(get_theme_mod('smartshop_store_front_featured_count'));
                     $product_args = array(
                         'post_type' => 'download',
                         'posts_per_page' => $per_page
@@ -71,7 +71,7 @@ if (class_exists('Easy_Digital_Downloads')) {
                                             <div class="product-buttons">
                                                 <?php if (get_theme_mod('smartshop_product_view_details')) : ?>
                                                       <a class="view-details" href="<?php the_permalink(); ?>">
-                                                          <?php echo get_theme_mod('smartshop_product_view_details'); ?>
+                                                          <?php echo esc_html(get_theme_mod('smartshop_product_view_details')); ?>
                                                       </a>
                                                 <?php endif; ?>
                                             </div><!--end .product-buttons-->
