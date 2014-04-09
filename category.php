@@ -29,7 +29,7 @@
                             </a>
                         </h2>
 
-                        <span class="post-meta"><small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --></small></span>
+                        <span class="post-meta"><small><?php the_time(__('F j, Y','smartshop')); ?> <!-- by <?php the_author() ?> --></small></span>
                         <?php the_excerpt(); ?>
 
                     </div><!--end .entry-->
