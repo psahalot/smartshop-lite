@@ -11,7 +11,7 @@
 // Start a new query for displaying featured posts on Front Page
 
 if (get_theme_mod('smartshop_front_featured_posts_check')) {
-    $featured_count = intval(get_theme_mod('smartshop_front_featured_posts_count'));
+    $featured_count = absint(get_theme_mod('smartshop_front_featured_posts_count'));
     $var = get_theme_mod('smartshop_front_featured_posts_cat');
 
     // if no category is selected then return 0 
@@ -51,9 +51,8 @@ if (get_theme_mod('smartshop_front_featured_posts_check')) {
                                 </a>
                             </h3>
 
-                            <span class="post-meta"><small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --></small></span>
-                            <?php $content = get_the_content();
-					echo wp_trim_words( $content , '50' ); ?>
+                            <span class="post-meta"><small><?php the_time(__('F jS, Y','smartshop')); ?> <!-- by <?php the_author() ?> --></small></span>
+                            <?php the_excerpt(); ?>
 										
                         </div><!--end .entry-->
 
