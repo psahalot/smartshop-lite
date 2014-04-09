@@ -8,18 +8,23 @@ Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-SmartShop is a mobile responsive WordPress theme with support for Easy Digital Downloads plugin. 
-So you can setup a simple business webiste or even integrate an online store for selling digital products. 
+SmartShop is a mobile responsive WordPress theme with unlimited colors, full-width and boxed layout options. 
+It supports Easy Digital Downloads plugin so you can setup a simple business webiste or even integrate an online store for selling digital products. 
 
 
 == Description ==
 
-SmartShop is a mobile responsive WordPress theme creating beautiful, responsive websites. It has been built only with
-required features and options. There are no confusing theme options and settings. Simply install and activate the theme.
+SmartShop is a mobile responsive WordPress theme for creating beautiful, responsive website with unlimited color schemes and choice of two layout options - full-width & boxed. 
+There are no confusing theme options and settings. Simply install and activate the theme. 
+You can control the layout styling, front featured products, front featured posts from Theme Customizer.
 Front page is completely widgetized so it gives the users complete control over the content. 
+
 There's built in support for Easy Digital Downloads plugin which allows users to setup their online store and
 start selling digital products easily.
 
+Background color and image options work only for Boxed layout. 
+
+Built in styling for Gravity Forms and Contact Form 7 plugins.
 == Installation ==
 
 There are three ways to install your theme. It can be installed by manually uploading the files to the themes folder using an FTP application,
