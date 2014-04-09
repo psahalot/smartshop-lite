@@ -1,8 +1,8 @@
 /*
 Theme Name: SmartShop
 Theme URI: http://ideaboxthemes.com/themes/smartshop-lite-wordpress-theme/
-Description: A mobile reponsive WordPress theme for business owners. SmartShop has support for Easy Digital Downloads plugin, you can show latest products and posts on front page. Setup a dedicated store page to display all the products. It's super easy to build and customize your online store with SmartShop.
-Version: 1.3
+Description: A mobile reponsive WordPress theme with unlimited colors, full-width and boxed layout options. SmartShop has support for Easy Digital Downloads plugin, you can show latest products and posts on front page. Setup a dedicated store page to display all the products. It's super easy to build and customize your online store with SmartShop. It also comes with styling for Gravity Forms and Contact Form 7 plugins.
+Version: 1.4
 Author: IdeaBox Themes, Puneet Sahalot
 Author URI: http://ideaboxthemes.com
 License: GNU General Public License v2 or later
@@ -281,10 +281,51 @@ div, input, ul, li
     box-sizing:border-box;
 }
 
-/* Content Wrapper */
+/* Boxed Layout Wrapper and Styling */
+
 #wrapper {
     max-width: 100%;
     margin: 0 auto; 
+}
+
+.boxed #wrapper {
+    max-width: 1140px; 
+    margin: 30px auto; 
+}
+
+.boxed #header {
+    padding: 20px; 
+}
+.boxed #home-widgets {
+    padding: 20px; 
+}
+
+.boxed .content {
+    padding: 0 20px; 
+}
+
+.boxed #featured-posts {
+    padding-left: 0; 
+}
+
+.boxed .home-sidebar .sidebar li.widget {
+    padding-right: 0; 
+}
+.boxed .hentry{
+    margin:0px 0px 20px 0px;
+}
+
+.boxed .full-width-content .hentry{
+    margin-left:0;
+}
+
+.boxed #footer{
+    padding:30px 20px 0 20px;
+}
+
+.boxed .comments {
+    margin-left: 22px; 
+    margin-right: 22px; 
 }
 
 /* header */
@@ -1919,20 +1960,36 @@ IdeaBox Social Icons
 
 }
 
+
 @media only screen and (max-width: 1139px)
 {
-   
+    .boxed #wrapper
+    {
+        max-width:960px;
+    }
+
+
     #footer-widgets .col grid_4_of_12
     {
         margin-right:0px;
     }
 
-   
+    .boxed .main-navigation li ul li a{
+        width:167px;
+    }
 }
 
 @media only screen and (max-width: 980px)
 {
-   
+    .boxed #wrapper 
+    {	
+        width: 100%; 
+        max-width:900px;
+    }
+    .boxed .main-navigation li ul li a{
+        width:157px;
+    }
+
     .full-width .main-navigation li ul li a{
         width:161px;
     }
@@ -1960,7 +2017,11 @@ IdeaBox Social Icons
 
 @media only screen and (max-width: 767px)
 {
-    
+    .boxed #wrapper
+    {
+        width: 100%; 
+        max-width:640px;
+    }
 
     #header
     {
@@ -1994,15 +2055,11 @@ IdeaBox Social Icons
         border-left:20px solid #111;
     }
 
-    .main-navigation li ul ul {
-        left: 0px !important; 
-    }
-    
-    .main-navigation li ul li a {
+    .main-navigation li ul li a{
         width:100%;
     }
     
-    .full-width .main-navigation li ul li a {
+    .full-width .main-navigation li ul li a{
         width:100%;
     }
     .main-navigation a {
@@ -2067,7 +2124,10 @@ IdeaBox Social Icons
         color:#fff;
     }
 
-   
+    .boxed #footer
+    {
+        padding:30px 0 0 0;
+    }
     .footer-widget 
     {
         float: none;
