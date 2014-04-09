@@ -22,7 +22,7 @@
 function smartshop_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
-		'default-text-color'     => 'ee4343',
+		'default-text-color'     => 'F84545',
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
