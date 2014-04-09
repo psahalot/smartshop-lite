@@ -13,6 +13,19 @@
 function smartshop_customize_register($wp_customize) {
     $wp_customize->get_setting('blogname')->transport = 'postMessage';
     $wp_customize->get_setting('blogdescription')->transport = 'postMessage';
+
+    // reorganize background settings in customizer
+    $wp_customize->get_control( 'background_color'  )->section   = 'background_image';
+    $wp_customize->get_section( 'background_image'  )->title     = __('Background Settings','smartshop');
+    $wp_customize->get_section( 'background_image' )->description = __('Please note that background color and image settings work only for Boxed Layout','smartshop'); 
+    
+    // reorganize header settings in cusotmizer
+    $wp_customize->get_control( 'header_textcolor'  )->section   = 'header_image';
+    $wp_customize->get_control( 'display_header_text' )->section = 'header_image'; 
+    $wp_customize->get_section( 'header_image'  )->title     = __('Header Settings','smartshop');
+    
+    $wp_customize->get_section( 'header_image'  )->priority     = 30;
+    $wp_customize->get_section( 'background_image' )->priority  = 30; 
 }
 
 add_action('customize_register', 'smartshop_customize_register', 12);
@@ -45,7 +58,46 @@ function smartshop_customizer($wp_customize) {
 
     }
 
+    // Add new section for theme layout and color schemes
+    $wp_customize->add_section('smartshop_theme_layout_settings', array(
+        'title' => __('Theme Layout & Colors', 'smartshop'),
+        'priority' => 30,
+    ));
+
+    // Add setting for theme layout
+    $wp_customize->add_setting('smartshop_theme_layout', array( 'default' => __('boxed','smartshop'), 'smartshop_sanitize_layout_option'));
+
+    $wp_customize->add_control('smartshop_theme_layout', array(
+        'label' => 'Layout Options',
+        'section' => 'smartshop_theme_layout_settings',
+        'type' => 'radio',
+        'choices' => array(
+            'full-width' => __('Full Width', 'smartshop'),
+            'boxed' => __('Boxed', 'smartshop'),
+        ),
+    ));
     
+    // Add setting for primary color
+    $wp_customize->add_setting('smartshop_theme_primary_color', array('default' => '#F84545', 'sanitize_callback' => 'sanitize_hex_color', ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'smartshop_theme_primary_color',
+        array(
+            'label' => 'Primary Color',
+            'section' => 'smartshop_theme_layout_settings',
+            'settings' => 'smartshop_theme_primary_color',
+        )
+    ));
+
+    // Add setting for secondary color
+    $wp_customize->add_setting('smartshop_theme_secondary_color', array('default' => '#FFF', 'sanitize_callback' => 'sanitize_hex_color', ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'smartshop_theme_secondary_color',
+        array(
+            'label' => 'Secondary Color',
+            'section' => 'smartshop_theme_layout_settings',
+            'settings' => 'smartshop_theme_secondary_color',
+        )
+    ));
 
     if (class_exists('Easy_Digital_Downloads')) {
         $wp_customize->add_section('smartshop_edd_options', array(
@@ -170,7 +222,11 @@ function smartshop_customizer($wp_customize) {
 
 add_action('customize_register', 'smartshop_customizer', 11);
 
-// Sanitize Checkbox 
+/*
+ * Sanitize Checkbox input values
+ * 
+ * @since SmartShop 1.2
+ */
 function smartshop_sanitize_checkbox( $input ) {
 	if ( $input ) {
 		$output = '1';
@@ -180,34 +236,80 @@ function smartshop_sanitize_checkbox( $input ) {
 	return $output;
 }
 
+/*
+ * Sanitize layout options 
+ * 
+ * @since SmartShop 1.4
+ */
+function smartshop_sanitize_layout_option($layout_option){
+    if ( ! in_array( $layout_option, array( 'full-width','boxed' ) ) ) {
+		$layout_option = 'boxed';
+	}
 
-// Generate CSS 
-function smartshop_generate_css($selector, $style, $mod_name, $prefix = '', $postfix = '', $echo = true) {
-    $return = '';
-    $mod = get_theme_mod($mod_name);
-    if (!empty($mod)) {
-        $return = sprintf('%s { %s:%s; }', $selector, $style, $prefix . $mod . $postfix
-        );
-        if ($echo) {
-            echo $return;
-        }
-    }
-    return $return;
+	return $layout_option;
 }
 
+/**
+ * Change theme colors based on theme options from customizer.
+ *
+ * @since SmartShop 1.0
+ */
+function smartshop_color_style() {
+	$primary_color = get_theme_mod('smartshop_theme_primary_color');
+        $secondary_color = get_theme_mod('smartshop_theme_secondary_color'); 
 
-// Output CSS to wp_head() 
-function smartshop_header_output() {
-    ?>
-    <!--Customizer CSS--> 
-    <style type="text/css">
-    <?php smartshop_generate_css('#site-name', 'color', 'title_textcolor', ''); ?>
-    <?php smartshop_generate_css('.sidebarwidget a', 'color', 'link_textcolor', ''); ?>
-    <?php smartshop_generate_css('.site-logo', 'display', 'name', 'none'); ?>
-    </style> 
-    <!--/Customizer CSS-->
-    <?php
+	// If no custom options for text are set, let's bail
+	if ( $primary_color == '#F84545' || $primary_color == '#f84545' )
+		return;
+
+	// If we get this far, we have custom styles.
+	?>
+	<style type="text/css" id="smartshop-color-css">
+
+                .header-widget .smartshop-call,
+                #footer,
+                #featured-products .product-info,
+                #page-header-container,
+                .pagination a:hover, 
+                 .pagination span.current,
+                .page-pagination a:hover,
+                .edd-submit.button.blue:hover,
+                .main-navigation li ul li a,
+                .nav-menu > li > a:hover,
+                #home-cta-area,
+                .gform_footer input[type=submit]:hover,
+                .home-sidebar .sidebar .gform_footer input[type="submit"],
+                .sidebar .wpcf7 .wpcf7-form input[type="submit"],
+                .sidebar .gform_footer input[type="submit"],
+                #commentsubmit,
+                .hentry #edd_login_form input[type="submit"],
+                #commentsubmit, .form-submit input[type="submit"] {
+                    background: <?php echo $primary_color; ?> !important;
+                    color: <?php echo $secondary_color; ?> !important; 
+                }
+
+                .gform_footer input[type=submit]:hover,
+                #commentsubmit,
+                .hentry #edd_login_form input[type="submit"] {
+                    color:<?php echo $secondary_color; ?> !important;
+                }
+
+                 #home-widgets .fa, 
+                .hentry .read-more,
+                .product .title:hover,
+                .sidebar li.widget ul a:hover,
+                #logo-wrap h1 a,
+                .gform_wrapper .gfield_required,
+                .hentry a:hover {
+                    color:<?php echo $primary_color; ?> !important;
+                }
+
+                ::selection {
+                    background:<?php echo $primary_color; ?> !important;
+                    color:<?php echo $secondary_color; ?> !important;
+                }
+
+	</style>
+	<?php
 }
-
-// Output custom CSS to live site
-add_action('wp_head', 'smartshop_header_output');
+add_action('wp_head','smartshop_color_style');
