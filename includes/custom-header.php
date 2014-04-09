@@ -26,8 +26,8 @@ function smartshop_custom_header_setup() {
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 300,
-		'width'                  => 800,
+		'height'                 => 90,
+		'width'                  => 700,
 
 		// Support flexible height and width.
 		'flex-height'            => true,

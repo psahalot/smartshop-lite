@@ -24,7 +24,7 @@ global $edd_options; // EDD plugin settings
 
                 <div class="row" id="logo-wrap">
 
-                    <div class="col grid_6_of_12">	
+                    <div class="col grid_8_of_12">	
                         <h1 class="site-title">
                             <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" rel="home">
                                 <?php echo get_bloginfo('name'); ?>	
@@ -38,7 +38,7 @@ global $edd_options; // EDD plugin settings
                             <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
                         <?php endif; ?>
                     </div>
-                    <div class="col grid_6_of_12 header-extras last">
+                    <div class="col grid_4_of_12 header-extras last">
                         <?php if (class_exists('Easy_Digital_Downloads')) { ?>
                             <span id="header-cart">
                                 <a href="<?php echo get_permalink($edd_options['purchase_page']); ?>">
