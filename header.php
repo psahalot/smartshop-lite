@@ -18,7 +18,7 @@ global $edd_options; // EDD plugin settings
         <?php wp_head(); ?>
 
     </head>
-    <body <?php body_class('smart-shop-red full-width'); ?> >
+    <body <?php body_class('smart-shop-red'); ?> >
         <div id="wrapper">
             <div class="container" id="header">
 
@@ -27,27 +27,22 @@ global $edd_options; // EDD plugin settings
                     <div class="col grid_6_of_12">	
                         <h1 class="site-title">
                             <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" rel="home">
-                                <?php
-                                $headerImg = get_header_image();
-                                if (!empty($headerImg)) {
-                                    ?>
-                                    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-                                    <?php
-                                } else {
-                                    echo get_bloginfo('name');
-                                }
-                                ?>
+                                <?php echo get_bloginfo('name'); ?>	
                             </a>
                         </h1>
-                        <?php if (empty($headerImg)) { ?>
-                            <p class="site-description"><?php echo get_bloginfo('description'); ?></p>
-                        <?php } ?>
+                        <p class="site-description"> 
+                            <?php echo get_bloginfo('description'); ?>
+                        </p>
+
+                        <?php if (get_header_image()) : ?>
+                            <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
+                        <?php endif; ?>
                     </div>
                     <div class="col grid_6_of_12 header-extras last">
                         <?php if (class_exists('Easy_Digital_Downloads')) { ?>
                             <span id="header-cart">
                                 <a href="<?php echo get_permalink($edd_options['purchase_page']); ?>">
-                                    <i class="fa fa-shopping-cart"></i> Cart (<span class="header-cart edd-cart-quantity"><?php echo edd_get_cart_quantity(); ?></span>)
+                                    <i class="fa fa-shopping-cart"></i> <?php _e('Cart','smarthsop'); ?> (<span class="header-cart edd-cart-quantity"><?php echo edd_get_cart_quantity(); ?></span>)
                                 </a>
                             </span>
                         <?php } ?>
