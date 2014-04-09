@@ -2,7 +2,7 @@
 <div id="page-header-container" class="container">
     <div class="headsection row">
         <h2 class="title"><?php the_title(); ?></h2>
-        <small class="date"><?php the_time('F jS, Y'); ?></small>
+        <small class="date"><?php the_time(__('F j, Y','smartshop')); ?></small>
     </div>
 </div>
 <div id="main-content-container" class="container">
@@ -26,7 +26,7 @@
 
                             </div><!--end .product-content.entry-->
                             <div class="content-des">
-                                <?php the_content('Read the rest of this entry &raquo;'); ?>
+                                <?php the_content(__('Read the rest of this entry &raquo;','smartshop')); ?>
                             </div>
 
 
