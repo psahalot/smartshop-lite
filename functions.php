@@ -2,18 +2,13 @@
 
 $edds_options = get_option('SS_THEME_settings');
 
-if (!defined('SS_THEME_DIR')) {
-    define('SS_THEME_DIR', dirname(__FILE__));
-}
-if (!defined('SS_THEME_URL')) {
-    define('SS_THEME_URL', get_template_directory_uri());
-}
-
-include(SS_THEME_DIR . '/includes/edd-config.php');
-
-
 /* Include plugin activation file to install plugins */
 include get_template_directory() . '/includes/plugin-activation/plugin-details.php';
+
+/**
+ * Add support for a custom header image.
+ */
+require( get_template_directory() . '/includes/custom-header.php' );
 
 // customizer addition
 require get_template_directory() . '/includes/customizer.php';
@@ -50,32 +45,13 @@ if (!function_exists('smartshop_theme_setup')) {
         // Enable support for Custom Backgrounds
         add_theme_support('custom-background', array(
             // Background color default
-            'default-color' => '222',
+            'default-color' => 'fff',
             // Background image default
             'default-image' => '',
             'header-text' => 'true',
             'flex-height' => 'true',
             'flex-width' => 'true'
-        ));
-
-
-        // Enable support for Custom Headers (or in our case, a custom logo)
-        add_theme_support('custom-header', array(
-            // Header image default
-            'default-image' => '',
-            // Header text display default
-            'header-text' => false,
-            // Header text color default
-            'default-text-color' => '000',
-            // Flexible width
-            'flex-width' => true,
-            // Header image width (in pixels)
-            'width' => 300,
-            // Flexible height
-            'flex-height' => true,
-            // Header image height (in pixels)
-            'height' => 80
-        ));
+        )); 
 
         //adds post thumbnail support - new in Wordpress 2.9
         add_theme_support('post-thumbnails');
@@ -94,22 +70,25 @@ if (!function_exists('smartshop_theme_setup')) {
 }
 add_action('after_setup_theme', 'smartshop_theme_setup');
 
+// Load Scripts for responsive navigation, media queries, comments and stheme stylesheet.
 function smartshop_load_scripts() {
 
     if (is_singular()) {
         wp_enqueue_script('comment-reply');
     }
-        wp_enqueue_script('smartshop-media-queries', SS_THEME_URL . '/assets/js/css3-mediaqueries.js');
+        wp_enqueue_script('smartshop-media-queries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js');
 
         // Adds JavaScript for handling the navigation menu hide-and-show behavior.
         wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
 
         // styles
-        wp_enqueue_style('smartshop-style', SS_THEME_URL . '/style.css');
+        wp_enqueue_style('smartshop-style', get_template_directory_uri() . '/style.css');
 }
 
 add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 
+
+// Load Google Fonts
 add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
 function smartshop_load_fonts() {
@@ -120,6 +99,7 @@ function smartshop_load_fonts() {
     wp_enqueue_style('font-awesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
 }
 
+// Register Sidebars
 if (function_exists('register_sidebar')) {
 
     register_sidebars(1, array(
@@ -235,16 +215,28 @@ if (function_exists('register_sidebar')) {
     ));
 }
 
+
+/*
+ * 
+ * Set excerpt length for products on front page
+ * and post excerpts on rest of the pages.
+ * 
+ */
 function smartshop_excerpt_length($length) {
-    if (is_archive() || is_front_page()) {
+    global $post;
+    if ($post->post_type == 'post') {
+        return 50;
+    }
+    else if (($post->post_type == 'download') && (is_front_page())) {
         return 15;
-    } else {
+    }
+    else {
         return 50;
     }
 }
+add_filter('excerpt_length', 'smartshop_excerpt_length');
 
-add_filter('excerpt_length', 'smartshop_excerpt_length', 999);
-
+// Customize read more link
 function smartshop_excerpt_more($more) {
     if (is_front_page()) {
         return '...';
@@ -254,3 +246,15 @@ function smartshop_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'smartshop_excerpt_more');
+
+
+// Add layout classes 
+add_filter('body_class', 'smartshop_layout_body_classes');
+function smartshop_layout_body_classes($classes) {
+
+    if (get_theme_mod('smartshop_theme_layout')) {
+        $classes[] = esc_html(get_theme_mod('smartshop_theme_layout'));
+    }
+    return $classes;
+}
+
