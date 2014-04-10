@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SmartShop\n"
-"POT-Creation-Date: 2014-04-08 11:25+0530\n"
-"PO-Revision-Date: 2014-04-08 11:25+0530\n"
+"POT-Creation-Date: 2014-04-10 15:43+0530\n"
+"PO-Revision-Date: 2014-04-10 15:43+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -23,18 +23,18 @@ msgid "Oops!"
 msgstr ""
 
 #: 404.php:15 archive-download.php:63 category.php:58
-#: content-frontposts.php:67 content-frontproducts.php:87 index.php:61
-#: page-templates/template-full-width.php:35 single-download.php:45
-#: single.php:39 tag.php:63 taxonomy-download_category.php:76
-#: taxonomy-download_tag.php:78
+#: content-frontposts.php:66 content-frontproducts.php:87 index.php:61
+#: page-templates/template-full-width.php:35
+#: page-templates/template-store.php:85 single-download.php:45 single.php:39
+#: tag.php:63 taxonomy-download_category.php:76 taxonomy-download_tag.php:78
 msgid "Not Found"
 msgstr ""
 
 #: 404.php:16 archive-download.php:64 category.php:59
-#: content-frontposts.php:68 content-frontproducts.php:88 index.php:62
-#: page-templates/template-full-width.php:36 single-download.php:46
-#: single.php:40 tag.php:64 taxonomy-download_category.php:77
-#: taxonomy-download_tag.php:79
+#: content-frontposts.php:67 content-frontproducts.php:88 index.php:62
+#: page-templates/template-full-width.php:36
+#: page-templates/template-store.php:86 single-download.php:46 single.php:40
+#: tag.php:64 taxonomy-download_category.php:77 taxonomy-download_tag.php:79
 msgid "Sorry, but you are looking for something that is not here."
 msgstr ""
 
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Add to Cart"
 msgstr ""
 
-#: archive-download.php:37 includes/customizer.php:92
+#: archive-download.php:37 includes/customizer.php:144
 #: page-templates/template-store.php:66 taxonomy-download_category.php:50
 #: taxonomy-download_tag.php:52
 msgid "View Details"
@@ -59,6 +59,10 @@ msgstr ""
 #: category.php:4
 #, php-format
 msgid "Category Archives: %s"
+msgstr ""
+
+#: category.php:32 single-download.php:5 single.php:5
+msgid "F j, Y"
 msgstr ""
 
 #: comments.php:8
@@ -89,303 +93,199 @@ msgstr ""
 msgid "Subscribe to Comments via RSS"
 msgstr ""
 
+#: content-frontposts.php:54 index.php:35 tag.php:37
+msgid "F jS, Y"
+msgstr ""
+
 #: footer.php:32
 msgid "Smart Shop WordPress theme by IdeaBox"
 msgstr ""
 
-#: functions.php:90
+#: functions.php:66
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:106
 msgid "Sidebar Right"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:115
 msgid "Shop Sidebar"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:117
 msgid "Appears in the sidebar on shop/product pages."
 msgstr ""
 
-#: functions.php:146
+#: functions.php:126
 msgid "Header Widget"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:129
 msgid "Appears in the top right section of header"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:135
 msgid "Home Featured"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:137
 msgid ""
 "Appears on the front page below navigation. Apt for adding featured slider"
 msgstr ""
 
-#: functions.php:164
+#: functions.php:144
 msgid "Home CTA"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:146
 msgid "Appears on the front page above featured posts and products listing"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:154
 msgid "Home Sidebar"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:156
 msgid "Appears on the right of featured posts on front page"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:164
 msgid "Home #1"
 msgstr ""
 
-#: functions.php:186 functions.php:196 functions.php:205
+#: functions.php:166 functions.php:176 functions.php:185
 msgid "Appears below the front page featured widget area."
 msgstr ""
 
-#: functions.php:194
+#: functions.php:174
 msgid "Home #2"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:183
 msgid "Home #3"
 msgstr ""
 
-#: functions.php:213
+#: functions.php:193
 msgid "Footer #1"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:201
 msgid "Footer #2"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:209
 msgid "Footer #3"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:244
 msgid "Read More"
 msgstr ""
 
-#: header.php:63
+#: header.php:45
+msgid "Cart"
+msgstr ""
+
+#: header.php:58
 msgid "Menu"
 msgstr ""
 
-#: includes/customizer.php:52
-msgid "Easy Digital Downloads"
+#: includes/customizer.php:19
+msgid "Background Settings"
 msgstr ""
 
-#: includes/customizer.php:53
-msgid "All other EDD options are under Dashboard => Downloads."
+#: includes/customizer.php:20
+msgid ""
+"Please note that background color and image settings work only for Boxed "
+"Layout"
 msgstr ""
 
-#: includes/customizer.php:60
-msgid "Show featured products on Front Page"
+#: includes/customizer.php:25
+msgid "Header Settings"
 msgstr ""
 
-#: includes/customizer.php:69
-msgid "Number of Featured Products"
+#: includes/customizer.php:63
+msgid "Theme Layout & Colors"
+msgstr ""
+
+#: includes/customizer.php:68
+msgid "boxed"
+msgstr ""
+
+#: includes/customizer.php:75
+msgid "Full Width"
 msgstr ""
 
 #: includes/customizer.php:76
-msgid "Latest Products"
+msgid "Boxed"
 msgstr ""
 
-#: includes/customizer.php:78
-msgid "Featured Products Title"
+#: includes/customizer.php:104
+msgid "Easy Digital Downloads"
 msgstr ""
 
-#: includes/customizer.php:86
-msgid "Featured Products Description"
-msgstr ""
-
-#: includes/customizer.php:94
-msgid "Product Details Text"
-msgstr ""
-
-#: includes/customizer.php:102
-msgid "Store Item Count"
+#: includes/customizer.php:105
+msgid "All other EDD options are under Dashboard => Downloads."
 msgstr ""
 
 #: includes/customizer.php:112
-msgid "Front Page Featured Posts"
+msgid "Show featured products on Front Page"
 msgstr ""
 
-#: includes/customizer.php:113
-msgid "Settings for displaying featured posts on Front Page"
-msgstr ""
-
-#: includes/customizer.php:119
-msgid "Show featured posts on Front Page"
-msgstr ""
-
-#: includes/customizer.php:126
-msgid "Latest Posts"
+#: includes/customizer.php:121
+msgid "Number of Featured Products"
 msgstr ""
 
 #: includes/customizer.php:128
+msgid "Latest Products"
+msgstr ""
+
+#: includes/customizer.php:130
+msgid "Featured Products Title"
+msgstr ""
+
+#: includes/customizer.php:138
+msgid "Featured Products Description"
+msgstr ""
+
+#: includes/customizer.php:146
+msgid "Product Details Text"
+msgstr ""
+
+#: includes/customizer.php:154
+msgid "Store Item Count"
+msgstr ""
+
+#: includes/customizer.php:164
+msgid "Front Page Featured Posts"
+msgstr ""
+
+#: includes/customizer.php:165
+msgid "Settings for displaying featured posts on Front Page"
+msgstr ""
+
+#: includes/customizer.php:171
+msgid "Show featured posts on Front Page"
+msgstr ""
+
+#: includes/customizer.php:178
+msgid "Latest Posts"
+msgstr ""
+
+#: includes/customizer.php:180
 msgid "Featured Section Title"
 msgstr ""
 
-#: includes/customizer.php:137
+#: includes/customizer.php:189
 msgid "Number of posts to display"
 msgstr ""
 
-#: includes/customizer.php:145
+#: includes/customizer.php:197
 msgid "Read more"
 msgstr ""
 
-#: includes/customizer.php:147
+#: includes/customizer.php:199
 msgid "Posts Read More Link Text"
-msgstr ""
-
-#: includes/edd-config.php:21
-msgctxt "post type general name"
-msgid "Products"
-msgstr ""
-
-#: includes/edd-config.php:22
-msgctxt "post type singular name"
-msgid "Product"
-msgstr ""
-
-#: includes/edd-config.php:23
-msgid "Add New"
-msgstr ""
-
-#: includes/edd-config.php:24
-msgid "Add New Product"
-msgstr ""
-
-#: includes/edd-config.php:25
-msgid "Edit Product"
-msgstr ""
-
-#: includes/edd-config.php:26
-msgid "New Product"
-msgstr ""
-
-#: includes/edd-config.php:27
-msgid "All Products"
-msgstr ""
-
-#: includes/edd-config.php:28
-msgid "View Product"
-msgstr ""
-
-#: includes/edd-config.php:29
-msgid "Search Products"
-msgstr ""
-
-#: includes/edd-config.php:30
-msgid "No Products found"
-msgstr ""
-
-#: includes/edd-config.php:31
-msgid "No Products found in Trash"
-msgstr ""
-
-#: includes/edd-config.php:33
-msgid "Products"
-msgstr ""
-
-#: includes/edd-config.php:46
-msgctxt "taxonomy general name"
-msgid "Types"
-msgstr ""
-
-#: includes/edd-config.php:47
-msgctxt "taxonomy singular name"
-msgid "Type"
-msgstr ""
-
-#: includes/edd-config.php:48
-msgid "Search Types"
-msgstr ""
-
-#: includes/edd-config.php:49
-msgid "All Types"
-msgstr ""
-
-#: includes/edd-config.php:50
-msgid "Parent Type"
-msgstr ""
-
-#: includes/edd-config.php:51
-msgid "Parent Type:"
-msgstr ""
-
-#: includes/edd-config.php:52
-msgid "Edit Type"
-msgstr ""
-
-#: includes/edd-config.php:53
-msgid "Update Type"
-msgstr ""
-
-#: includes/edd-config.php:54
-msgid "Add New Type"
-msgstr ""
-
-#: includes/edd-config.php:55
-msgid "New Type"
-msgstr ""
-
-#: includes/edd-config.php:56
-msgid "Types"
-msgstr ""
-
-#: includes/edd-config.php:65
-msgctxt "taxonomy general name"
-msgid "Features"
-msgstr ""
-
-#: includes/edd-config.php:66
-msgctxt "taxonomy singular name"
-msgid "Feature"
-msgstr ""
-
-#: includes/edd-config.php:67
-msgid "Search Features"
-msgstr ""
-
-#: includes/edd-config.php:68
-msgid "All Features"
-msgstr ""
-
-#: includes/edd-config.php:69
-msgid "Parent Feature"
-msgstr ""
-
-#: includes/edd-config.php:70
-msgid "Parent Feature:"
-msgstr ""
-
-#: includes/edd-config.php:71
-msgid "Edit Feature"
-msgstr ""
-
-#: includes/edd-config.php:72
-msgid "Update Feature"
-msgstr ""
-
-#: includes/edd-config.php:73
-msgid "Add New Feature"
-msgstr ""
-
-#: includes/edd-config.php:74
-msgid "New Feature"
-msgstr ""
-
-#: includes/edd-config.php:75
-msgid "Features"
 msgstr ""
 
 #: includes/plugin-activation/class-tgm-plugin-activation.php:161
@@ -694,8 +594,79 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: includes/plugin-activation/plugin-details.php:47
+msgid "Soliloquy Lite"
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:54
+msgid "Contact Form 7"
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:61
+msgid "Envira Gallery"
+msgstr ""
+
 #: includes/plugin-activation/plugin-details.php:86
 msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:87
+#, php-format
+msgid "This theme requires the following plugins: %1$s."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:88
+#, php-format
+msgid "This theme recommends the following plugins: %1$s."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:89
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:90
+#, php-format
+msgid "The following required plugins are currently inactive: %1$s."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:91
+#, php-format
+msgid "The following recommended plugins are currently inactive: %1$s."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:92
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:93
+#, php-format
+msgid ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:94
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:95
+msgid "Begin installing plugins"
+msgstr ""
+
+#: includes/plugin-activation/plugin-details.php:96
+msgid "Begin activating plugins"
 msgstr ""
 
 #: includes/plugin-activation/plugin-details.php:99
@@ -716,7 +687,11 @@ msgstr ""
 msgid "Search . . ."
 msgstr ""
 
-#: single.php:24
+#: sidebar.php:7
+msgid "Shopping Cart"
+msgstr ""
+
+#: single-download.php:29 single.php:24
 msgid "Read the rest of this entry &raquo;"
 msgstr ""
 
