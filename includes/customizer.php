@@ -249,7 +249,7 @@ function smartshop_customizer($wp_customize) {
     // Add footer text section
     $wp_customize->add_section('smartshop_footer', array(
         'title' => 'Footer Text', // The title of section
-        'priority' => 70,
+        'priority' => 75,
     ));
 
     $wp_customize->add_setting('smartshop_footer_footer_text', array(
@@ -267,7 +267,7 @@ function smartshop_customizer($wp_customize) {
     $wp_customize->add_section(
         'smartshop_custom_css_section', array(
         'title' => __('Custom CSS', 'smartshop'),
-        'priority' => 75,
+        'priority' => 80,
     ));
 
     $wp_customize->add_setting(
@@ -340,12 +340,12 @@ function smartshop_sanitize_escaping( $input) {
  * @since SmartShop 1.2
  */
 function smartshop_sanitize_checkbox( $input ) {
-	if ( $input ) {
-		$output = '1';
-	} else {
-		$output = false;
-	}
-	return $output;
+    if ( $input ) {
+            $output = '1';
+    } else {
+            $output = false;
+    }
+    return $output;
 }
 
 /*
@@ -371,12 +371,12 @@ function smartshop_color_style() {
         $secondary_color = get_theme_mod('smartshop_theme_secondary_color'); 
 
 	// If no custom options for text are set, let's bail
-	if ( $primary_color == '#F84545' || $primary_color == '#f84545' )
-		return;
-
+	if ( $primary_color == '#F84545' || $primary_color == '#f84545' ) {
+            return;
+        }
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="smartshop-color-css">
+	<style type="text/css" id="smartshop-colorscheme-css">
 
                 .header-widget .smartshop-call,
                 #footer,
@@ -422,6 +422,9 @@ function smartshop_color_style() {
                 }
 
 	</style>
+        <style type="text/css" id="smartshop-custom-css">
+            <?php echo trim( get_theme_mod( 'smartshop_custom_css' ) ); ?>
+        </style>
 	<?php
 }
 add_action('wp_head','smartshop_color_style');
