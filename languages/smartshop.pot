@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SmartShop\n"
-"POT-Creation-Date: 2014-04-10 15:43+0530\n"
-"PO-Revision-Date: 2014-04-10 15:43+0530\n"
+"POT-Creation-Date: 2014-04-11 00:26+0530\n"
+"PO-Revision-Date: 2014-04-11 00:26+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Add to Cart"
 msgstr ""
 
-#: archive-download.php:37 includes/customizer.php:144
+#: archive-download.php:37 includes/customizer.php:170
 #: page-templates/template-store.php:66 taxonomy-download_category.php:50
 #: taxonomy-download_tag.php:52
 msgid "View Details"
@@ -208,84 +208,92 @@ msgstr ""
 msgid "Theme Layout & Colors"
 msgstr ""
 
-#: includes/customizer.php:68
+#: includes/customizer.php:70
 msgid "boxed"
 msgstr ""
 
-#: includes/customizer.php:75
+#: includes/customizer.php:80
 msgid "Full Width"
 msgstr ""
 
-#: includes/customizer.php:76
+#: includes/customizer.php:81
 msgid "Boxed"
 msgstr ""
 
-#: includes/customizer.php:104
+#: includes/customizer.php:117
 msgid "Easy Digital Downloads"
 msgstr ""
 
-#: includes/customizer.php:105
+#: includes/customizer.php:118
 msgid "All other EDD options are under Dashboard => Downloads."
 msgstr ""
 
-#: includes/customizer.php:112
+#: includes/customizer.php:128
 msgid "Show featured products on Front Page"
 msgstr ""
 
-#: includes/customizer.php:121
+#: includes/customizer.php:140
 msgid "Number of Featured Products"
 msgstr ""
 
-#: includes/customizer.php:128
+#: includes/customizer.php:148
 msgid "Latest Products"
 msgstr ""
 
-#: includes/customizer.php:130
+#: includes/customizer.php:152
 msgid "Featured Products Title"
 msgstr ""
 
-#: includes/customizer.php:138
+#: includes/customizer.php:163
 msgid "Featured Products Description"
 msgstr ""
 
-#: includes/customizer.php:146
+#: includes/customizer.php:174
 msgid "Product Details Text"
 msgstr ""
 
-#: includes/customizer.php:154
+#: includes/customizer.php:185
 msgid "Store Item Count"
 msgstr ""
 
-#: includes/customizer.php:164
+#: includes/customizer.php:195
 msgid "Front Page Featured Posts"
 msgstr ""
 
-#: includes/customizer.php:165
+#: includes/customizer.php:196
 msgid "Settings for displaying featured posts on Front Page"
 msgstr ""
 
-#: includes/customizer.php:171
+#: includes/customizer.php:205
 msgid "Show featured posts on Front Page"
 msgstr ""
 
-#: includes/customizer.php:178
+#: includes/customizer.php:213
 msgid "Latest Posts"
 msgstr ""
 
-#: includes/customizer.php:180
+#: includes/customizer.php:218
 msgid "Featured Section Title"
 msgstr ""
 
-#: includes/customizer.php:189
+#: includes/customizer.php:230
 msgid "Number of posts to display"
 msgstr ""
 
-#: includes/customizer.php:197
+#: includes/customizer.php:239
 msgid "Read more"
 msgstr ""
 
-#: includes/customizer.php:199
+#: includes/customizer.php:243
 msgid "Posts Read More Link Text"
+msgstr ""
+
+#: includes/customizer.php:269
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/customizer.php:283
+msgid "Add your custom css here and design live! (for advanced users)"
 msgstr ""
 
 #: includes/plugin-activation/class-tgm-plugin-activation.php:161
