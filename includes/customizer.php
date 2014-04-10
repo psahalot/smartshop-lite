@@ -65,7 +65,12 @@ function smartshop_customizer($wp_customize) {
     ));
 
     // Add setting for theme layout
-    $wp_customize->add_setting('smartshop_theme_layout', array( 'default' => __('boxed','smartshop'), 'smartshop_sanitize_layout_option'));
+    $wp_customize->add_setting('smartshop_theme_layout', 
+            array( 
+                'default' => __('boxed','smartshop'), 
+                'sanitize_callback' => 'smartshop_sanitize_layout_option',
+                )
+            );
 
     $wp_customize->add_control('smartshop_theme_layout', array(
         'label' => 'Layout Options',
@@ -78,7 +83,11 @@ function smartshop_customizer($wp_customize) {
     ));
     
     // Add setting for primary color
-    $wp_customize->add_setting('smartshop_theme_primary_color', array('default' => '#F84545', 'sanitize_callback' => 'sanitize_hex_color', ));
+    $wp_customize->add_setting('smartshop_theme_primary_color', array(
+        'default' => '#F84545', 
+        'sanitize_callback' => 'smartshop_sanitize_hex_color',
+        'sanitize_js_callback' => 'smartshop_sanitize_escaping',
+    ));
     
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'smartshop_theme_primary_color',
         array(
@@ -89,7 +98,11 @@ function smartshop_customizer($wp_customize) {
     ));
 
     // Add setting for secondary color
-    $wp_customize->add_setting('smartshop_theme_secondary_color', array('default' => '#FFF', 'sanitize_callback' => 'sanitize_hex_color', ));
+    $wp_customize->add_setting('smartshop_theme_secondary_color', array(
+        'default' => '#FFF', 
+        'sanitize_callback' => 'smartshop_sanitize_hex_color',
+        'sanitize_js_callback' => 'smartshop_sanitize_escaping',
+    ));
     
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'smartshop_theme_secondary_color',
         array(
@@ -107,7 +120,10 @@ function smartshop_customizer($wp_customize) {
         ));
 
         // enable featured products on front page?
-        $wp_customize->add_setting('smartshop_edd_front_featured_products', array('default' => 0), 'smartshop_sanitize_checkbox');
+        $wp_customize->add_setting('smartshop_edd_front_featured_products',array (
+            'default' => 0, 
+            'sanitize_callback' => 'smartshop_sanitize_checkbox',
+        ));
         $wp_customize->add_control('smartshop_edd_front_featured_products', array(
             'label' => __('Show featured products on Front Page', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -116,7 +132,10 @@ function smartshop_customizer($wp_customize) {
         ));
 
         // store front/archive item count
-        $wp_customize->add_setting('smartshop_store_front_featured_count', array('default' => 3),'sanitize_text_field');
+        $wp_customize->add_setting('smartshop_store_front_featured_count', array (
+            'default' => 3,
+            'sanitize_callback' => 'smartshop_sanitize_integer',
+        ));
         $wp_customize->add_control('smartshop_store_front_featured_count', array(
             'label' => __('Number of Featured Products', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -125,7 +144,10 @@ function smartshop_customizer($wp_customize) {
         ));
 
         // store front/downloads archive headline
-        $wp_customize->add_setting('smartshop_edd_store_archives_title', array('default' => __('Latest Products','smartshop')),'sanitize_text_field');
+        $wp_customize->add_setting('smartshop_edd_store_archives_title', array(
+            'default' => __('Latest Products','smartshop'),
+            'sanitize_callback' => 'sanitize_text_field'
+        ));
         $wp_customize->add_control('smartshop_edd_store_archives_title', array(
             'label' => __('Featured Products Title', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -133,7 +155,10 @@ function smartshop_customizer($wp_customize) {
             'priority' => 30,
         ));
         // store front/downloads archive description
-        $wp_customize->add_setting('smartshop_edd_store_archives_description', array('default' => null),'sanitize_text_field');
+        $wp_customize->add_setting('smartshop_edd_store_archives_description', array(
+            'default' => null,
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
         $wp_customize->add_control(new smartshop_customize_textarea_control($wp_customize, 'smartshop_edd_store_archives_description', array(
             'label' => __('Featured Products Description', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -141,7 +166,10 @@ function smartshop_customizer($wp_customize) {
             'priority' => 40, 
         )));
         // read more link
-        $wp_customize->add_setting('smartshop_product_view_details', array('default' => __('View Details', 'smartshop')),'sanitize_text_field');
+        $wp_customize->add_setting('smartshop_product_view_details', array(
+            'default' => __('View Details', 'smartshop'),
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
         $wp_customize->add_control('smartshop_product_view_details', array(
             'label' => __('Product Details Text', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -149,7 +177,10 @@ function smartshop_customizer($wp_customize) {
             'priority' => 50,
         ));
         // store front/archive item count
-        $wp_customize->add_setting('smartshop_store_front_count', array('default' => 9),'sanitize_text_field');
+        $wp_customize->add_setting('smartshop_store_front_count', array(
+            'default' => 9,
+            'sanitize_callback' => 'smartshop_sanitize_integer',
+        ));
         $wp_customize->add_control('smartshop_store_front_count', array(
             'label' => __('Store Item Count', 'smartshop'),
             'section' => 'smartshop_edd_options',
@@ -166,7 +197,10 @@ function smartshop_customizer($wp_customize) {
         'priority' => 60,
     ));
     // enable featured posts on front page?
-    $wp_customize->add_setting('smartshop_front_featured_posts_check', array('default' => 0), 'smartshop_sanitize_checkbox');
+    $wp_customize->add_setting('smartshop_front_featured_posts_check', array(
+        'default' => 0, 
+        'sanitize_callback' => 'smartshop_sanitize_checkbox',
+    ));
     $wp_customize->add_control('smartshop_front_featured_posts_check', array(
         'label' => __('Show featured posts on Front Page', 'smartshop'),
         'section' => 'smartshop_front_page_post_options',
@@ -175,7 +209,11 @@ function smartshop_customizer($wp_customize) {
     ));
 
     // Front featured posts section headline
-    $wp_customize->add_setting('smartshop_front_featured_posts_title', array('default' => __('Latest Posts', 'smartshop')),'sanitize_text_field');
+    $wp_customize->add_setting('smartshop_front_featured_posts_title', array(
+        'default' => __('Latest Posts', 'smartshop'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
     $wp_customize->add_control('smartshop_front_featured_posts_title', array(
         'label' => __('Featured Section Title', 'smartshop'),
         'section' => 'smartshop_front_page_post_options',
@@ -184,7 +222,10 @@ function smartshop_customizer($wp_customize) {
     ));
 
     // select number of posts for featured posts on front page
-    $wp_customize->add_setting('smartshop_front_featured_posts_count', array('default' => 3),'sanitize_text_field');
+    $wp_customize->add_setting('smartshop_front_featured_posts_count', array(
+        'default' => 3,
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
     $wp_customize->add_control('smartshop_front_featured_posts_count', array(
         'label' => __('Number of posts to display', 'smartshop'),
         'section' => 'smartshop_front_page_post_options',
@@ -194,7 +235,10 @@ function smartshop_customizer($wp_customize) {
 
 
     // featured post read more link
-    $wp_customize->add_setting('smartshop_front_featured_link_text', array('default' => __('Read more', 'smartshop')),'sanitize_text_field');
+    $wp_customize->add_setting('smartshop_front_featured_link_text', array(
+        'default' => __('Read more', 'smartshop'),
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
     $wp_customize->add_control('smartshop_front_featured_link_text', array(
         'label' => __('Posts Read More Link Text', 'smartshop'),
         'section' => 'smartshop_front_page_post_options',
@@ -211,16 +255,84 @@ function smartshop_customizer($wp_customize) {
     $wp_customize->add_setting('smartshop_footer_footer_text', array(
         'default' => '',
         'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_js_callback' => 'smartshop_sanitize_escaping',
     ));
     
     $wp_customize->add_control(new smartshop_customize_textarea_control($wp_customize, 'smartshop_footer_footer_text', array(
         'section' => 'smartshop_footer', // id of section to which the setting belongs
         'settings' => 'smartshop_footer_footer_text',
     )));
+    
+    // Add custom CSS section 
+    $wp_customize->add_section(
+        'smartshop_custom_css_section', array(
+        'title' => __('Custom CSS', 'smartshop'),
+        'priority' => 75,
+    ));
 
+    $wp_customize->add_setting(
+        'smartshop_custom_css', array(
+        'default' => '',
+        'sanitize_callback' => 'smartshop_sanitize_custom_css',
+        'sanitize_js_callback' => 'smartshop_sanitize_escaping',
+    ));
+
+    $wp_customize->add_control(
+        new smartshop_customize_textarea_control(
+        $wp_customize, 'smartshop_custom_css', array(
+        'label' => __('Add your custom css here and design live! (for advanced users)', 'smartshop'),
+        'section' => 'smartshop_custom_css_section',
+        'settings' => 'smartshop_custom_css'
+    )));
 }
 
 add_action('customize_register', 'smartshop_customizer', 11);
+
+/* 
+ * Sanitize Hex Color for 
+ * Primary and Secondary Color options
+ * 
+ * @since SmartShop 1.4
+ */
+function smartshop_sanitize_hex_color( $color ) {
+    if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+        return '#' . $unhashed;
+    }
+    return $color;
+}
+
+/* 
+ * Sanitize Custom CSS 
+ * 
+ * @since SmartShop 1.4
+ */
+
+function smartshop_sanitize_custom_css( $input) {
+    $input = wp_kses_stripslashes( $input);
+    return $input;
+}	
+
+/* 
+ * Sanitize numeric values 
+ * 
+ * @since SmartShop 1.4
+ */
+function smartshop_sanitize_integer( $input ) {
+    if( is_numeric( $input ) ) {
+    return intval( $input );
+    }
+}
+
+/*
+ * Escaping for input values
+ * 
+ * @since SmartShop 1.4
+ */
+function smartshop_sanitize_escaping( $input) {
+    $input = esc_attr( $input);
+    return $input;
+}
+
 
 /*
  * Sanitize Checkbox input values
