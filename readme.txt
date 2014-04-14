@@ -25,6 +25,7 @@ start selling digital products easily.
 Background color and image options work only for Boxed layout. 
 
 Built in styling for Gravity Forms and Contact Form 7 plugins.
+
 == Installation ==
 
 There are three ways to install your theme. It can be installed by manually uploading the files to the themes folder using an FTP application,
