@@ -21,9 +21,9 @@
                     dynamic_sidebar('home-featured');
                 } 
                 else { ?>
-                    <div id="text-9" class="widget widget_text">			
+                    <div class="widget widget_text">			
                         <div class="textwidget">
-                            <img src="http://localhost/smartshop/wp-content/uploads/2014/03/stairs-1140x450.jpg">
+                            <img src="<?php echo get_template_directory_uri().'/assets/images/featured.jpg'; ?>" />
                         </div>
                     </div>
                 <?php } ?>
@@ -48,7 +48,7 @@
                 <div class="home-widget widget_text">			
                         <div class="textwidget">
                             <p><i class="fa fa-gears"></i></p>
-                            <center>Home #1 Widget</center>
+                            <center><?php _e('Home #1 Widget','smartshop'); ?></center>
                         </div>
                     </div>
                 <?php } ?>
@@ -62,7 +62,7 @@
                     <div class="home-widget widget_text">			
                         <div class="textwidget">
                             <p><i class="fa fa-comments"></i></p>
-                            <center>Home #2 Widget</center>
+                            <center><?php _e('Home #2 Widget','smartshop'); ?></center>
                         </div>
                     </div>
             <?php } ?>
@@ -75,7 +75,7 @@
                     <div class="home-widget widget_text">			
                         <div class="textwidget">
                             <p><i class="fa fa-laptop"></i></p>
-                            <center>Home #3 Widget</center>
+                            <center><?php _e('Home #3 Widget','smartshop'); ?></center>
                         </div>
                     </div>
             <?php } ?>
@@ -99,8 +99,8 @@
                     <div class="home-cta-widget widget_text">
                         <h3 class="widget_title">Home CTA Widget</h3>			
                         <div class="textwidget">
-                            <p>This is Home CTA widget area to add some Call to Action text and button</p>
-                            <p><a href="#" class="smartshop-cta">Let's get started</a></p>
+                            <p><?php _e('This is Home CTA widget area to add some Call to Action text and button','smartshop'); ?></p>
+                            <p><a href="#" class="smartshop-cta"><?php _e('Let&lsquo;s get started','smartshop'); ?></a></p>
                         </div>
                     </div>
                 <?php } ?>
