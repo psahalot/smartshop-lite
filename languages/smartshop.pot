@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: SmartShop\n"
-"POT-Creation-Date: 2014-04-11 00:26+0530\n"
-"PO-Revision-Date: 2014-04-11 00:26+0530\n"
+"POT-Creation-Date: 2014-04-15 00:24+0530\n"
+"PO-Revision-Date: 2014-04-15 00:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "F jS, Y"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:31
 msgid "Smart Shop WordPress theme by IdeaBox"
 msgstr ""
 
@@ -693,6 +693,26 @@ msgstr ""
 
 #: searchform.php:2
 msgid "Search . . ."
+msgstr ""
+
+#: sidebar-front.php:51
+msgid "Home #1 Widget"
+msgstr ""
+
+#: sidebar-front.php:65
+msgid "Home #2 Widget"
+msgstr ""
+
+#: sidebar-front.php:78
+msgid "Home #3 Widget"
+msgstr ""
+
+#: sidebar-front.php:102
+msgid "This is Home CTA widget area to add some Call to Action text and button"
+msgstr ""
+
+#: sidebar-front.php:103
+msgid "Let&lsquo;s get started"
 msgstr ""
 
 #: sidebar.php:7
