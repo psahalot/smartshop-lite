@@ -198,7 +198,7 @@ function smartshop_customizer($wp_customize) {
     ));
     // enable featured posts on front page?
     $wp_customize->add_setting('smartshop_front_featured_posts_check', array(
-        'default' => 0, 
+        'default' => 1, 
         'sanitize_callback' => 'smartshop_sanitize_checkbox',
     ));
     $wp_customize->add_control('smartshop_front_featured_posts_check', array(
