@@ -260,6 +260,17 @@ body {
 a {
     text-decoration: none;
     color: #000;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -khtml-transition: all 0.3s ease;
+    -moz-transitiokn: all 0.3s ease; 
+}
+
+a:hover {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.3s ease;
+    -khtml-transition: all 0.3s ease;
+    -moz-transitiokn: all 0.5s ease; 
 }
 
 h1 a, h2 a, h3 a, h4 a {
@@ -275,11 +286,6 @@ h1 a, h2 a, h3 a, h4 a {
     content: ".";
     height:0; 
 }	
-
-div, input, ul, li
-{
-    box-sizing:border-box;
-}
 
 /* Boxed Layout Wrapper and Styling */
 
@@ -618,6 +624,7 @@ button:active {
     text-decoration:none;
 }
 
+#home-cta a,
 .smartshop-cta
 {
     background: #222; 
@@ -628,6 +635,7 @@ button:active {
     margin-top: 10px; 
 }
 
+#home-cta a:hover,
 .smartshop-cta:hover
 {
     color:#333;
