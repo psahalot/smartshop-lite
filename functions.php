@@ -107,16 +107,16 @@ if (function_exists('register_sidebar')) {
         'id' => 'sidebar_right',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => '</li>'
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>'
     ));
 
     register_sidebar(array(
         'name' => __('Shop Sidebar', 'smartshop'),
         'id' => 'sidebar_shop',
         'description' => esc_html__('Appears in the sidebar on shop/product pages.', 'smartshop'),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => '</li>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>'
     ));
@@ -156,8 +156,8 @@ if (function_exists('register_sidebar')) {
         'description' => esc_html__('Appears on the right of featured posts on front page', 'smartshop'),
         'before_title' => '<h3 class="widget_title">',
         'after_title' => '</h3>',
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget' => '</li>'
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>'
     ));
 
     register_sidebar(array(
