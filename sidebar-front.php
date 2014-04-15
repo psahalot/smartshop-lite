@@ -100,7 +100,7 @@
                         <h3 class="widget_title">Home CTA Widget</h3>			
                         <div class="textwidget">
                             <p><?php _e('This is Home CTA widget area to add some Call to Action text and button','smartshop'); ?></p>
-                            <p><a href="#" class="smartshop-cta"><?php _e('Let&lsquo;s get started','smartshop'); ?></a></p>
+                            <p><a href="#" class="smartshop-cta"><?php _e('Get started','smartshop'); ?></a></p>
                         </div>
                     </div>
                 <?php } ?>
