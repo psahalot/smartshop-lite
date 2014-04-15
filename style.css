@@ -314,7 +314,7 @@ h1 a, h2 a, h3 a, h4 a {
     padding-left: 0; 
 }
 
-.boxed .home-sidebar .sidebar li.widget {
+.boxed .home-sidebar .sidebar .widget {
     padding-right: 0; 
 }
 .boxed .hentry{
@@ -1248,13 +1248,13 @@ cite
     padding-top: 0px; 
 }
 
-.sidebar li.widget {
+.sidebar .widget {
     display: block;
     padding:0 20px 20px 0px;
     margin-bottom:20px;
 }
 
-.sidebar li.widget h3.widget_title {
+.sidebar .widget h3.widget_title {
     text-transform:uppercase;
     font-size:18px;
     font-weight:700;
@@ -1263,7 +1263,7 @@ cite
 }	
 
 
-.sidebar li.widget li {
+.sidebar .widget li {
     margin: 0 0 10px 0;
     display: block;
     padding-bottom: 10px;
@@ -1292,11 +1292,11 @@ cite
 }
 
 
-.sidebar li.widget a {
+.sidebar .widget a {
     color:#333; 
 }
 
-.sidebar li.widget ul a:hover
+.sidebar .widget ul a:hover
 {
     color:#e55137;
 }
@@ -1322,7 +1322,7 @@ cite
     color:#fff;
 }
 
-#footer li.widget {
+#footer .widget {
     display: block;	
 }
 
@@ -1876,7 +1876,7 @@ IdeaBox Social Icons
 .smart-shop-red  #home-widgets .fa, 
 .smart-shop-red .hentry .read-more,
 .smart-shop-red .product .title:hover,
-.smart-shop-red .sidebar li.widget ul a:hover,
+.smart-shop-red .sidebar .widget ul a:hover,
 .smart-shop-red #logo-wrap h1 a,
 .smart-shop-red .gform_wrapper .gfield_required,
 .smart-shop-red .hentry a:hover
@@ -1911,7 +1911,7 @@ IdeaBox Social Icons
 }
 
 
-.full-width .sidebar li.widget{
+.full-width .sidebar .widget{
     padding:0 0 20px;
 }
 
