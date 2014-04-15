@@ -71,13 +71,21 @@ if (get_theme_mod('smartshop_front_featured_posts_check')) {
 
             </div> <!-- /#featured-posts -->
 
-            <?php if (is_active_sidebar('home_sidebar')) { ?>
+           
                 <div class="col grid_4_of_12 home-sidebar">
                     <div class="sidebar">
-                        <?php dynamic_sidebar('home_sidebar'); ?>
+                        <?php if (is_active_sidebar('home_sidebar')) {
+                        dynamic_sidebar('home_sidebar'); 
+                        }
+                        else { ?>
+                            <div class="widget widget_text">
+                                <h3 class="widget_title"><?php _e('Home Sidebar','smartshop'); ?></h3>			
+                                <div class="textwidget"><?php _e('This is Home Sidebar widget area.','smartshop'); ?></div>
+                            </div>
+                        <?php } ?>
                     </div> <!-- /.sidebar -->
                 </div> <!-- /.home-sidebar -->
-            <?php } ?> 
+            
         </div> <!-- /#featured-posts-container -->
 
     </div> <!-- /#front-featured-posts -->
