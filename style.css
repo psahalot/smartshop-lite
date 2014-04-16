@@ -1291,6 +1291,10 @@ cite
     border: 1px solid #CCC;	
 }
 
+.sidebar #searchsubmit{
+    border-radius:0px;
+    background:#fff;
+}
 
 .sidebar .widget a {
     color:#333; 
@@ -1466,6 +1470,11 @@ cite
     margin: 0 0 20px;
     float:left;
 }	
+
+.attachment-product-image-large{
+    margin:0 20px 20px 0;
+    width:100%;
+}
 
 .product-meta {
     margin: 0 0 20px;
