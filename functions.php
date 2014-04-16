@@ -257,3 +257,23 @@ function smartshop_layout_body_classes($classes) {
     return $classes;
 }
 
+
+/*
+ * Check if the front page is set 
+ * to display latest blog posts
+ * or a static front page
+ * 
+ * If it's set to display blog posts
+ * then ignore the front-page.php 
+ * template and head over to index.php
+ * 
+ * @Credits Chip Bennett 
+ * 
+ * @since Tatva 1.2
+ */
+
+
+function smartshop_filter_front_page_template( $template ) {
+     return is_home() ? '' : $template ;
+}
+add_filter( 'frontpage_template', 'smartshop_filter_front_page_template' );
