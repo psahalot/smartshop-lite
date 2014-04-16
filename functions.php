@@ -92,7 +92,6 @@ add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
 function smartshop_load_fonts() {
-    wp_enqueue_style('smartshop-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,700');
     
     // Register and enqueue our icon font
     // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
