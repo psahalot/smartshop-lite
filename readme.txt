@@ -66,7 +66,7 @@ Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, hel
 
 SmartShop utilises the following awesomeness:
 
-[Featured Image] http://picjumbo.com/mens-equipment/ Men’s EquipmentBY VIKTOR HANACEK http://twitter.com/viktorhanacek
+[Featured Image] by Puneet Sahalot - Theme Author issued under GPL V2. 
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
 
