@@ -66,7 +66,7 @@ Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, hel
 
 SmartShop utilizes the following awesomeness:
 
-[Featured Image] by http://unsplash.com/post/51495156548/download-by-alejandro-escamilla , which is licensed under CC0 1.0 Universal http://creativecommons.org/publicdomain/zero/1.0 
+[Featured Image] by Alejandro Escamilla (http://unsplash.com/post/51495156548/download-by-alejandro-escamilla) , which is licensed under CC0 1.0 Universal http://creativecommons.org/publicdomain/zero/1.0 
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
 
