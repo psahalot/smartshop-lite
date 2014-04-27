@@ -64,11 +64,20 @@ Install by uploading the theme zip file:
 
 Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, help and code improvements 
 
-SmartShop utilises the following awesomeness:
+SmartShop utilizes the following awesomeness:
 
-[Featured Image] by Puneet Sahalot - Theme Author issued under GPL V2. 
+[Featured Image] by http://unsplash.com/post/51495156548/download-by-alejandro-escamilla , which is licensed under CC0 1.0 Universal http://creativecommons.org/publicdomain/zero/1.0 
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
+
+
+== Changelog ==
+- Fixed text domain issues for localization
+- Added licensing details for third party scripts
+- Improved front page file structure
+- Added RTL support
+- Added featured image and license details 
+- Fixed comments on page issue
 
 = 1.0 =
 - Initial version
