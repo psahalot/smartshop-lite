@@ -97,7 +97,7 @@
                     dynamic_sidebar('home_cta');
                 } else { ?>
                     <div class="home-cta-widget widget_text">
-                        <h3 class="widget_title">Home CTA Widget</h3>			
+                        <h3 class="widget_title"><?php _e('Home CTA Widget','smartshop'); ?></h3>			
                         <div class="textwidget">
                             <p><?php _e('This is Home CTA widget area to add some Call to Action text and button','smartshop'); ?></p>
                             <p><a href="#" class="smartshop-cta"><?php _e('Get started','smartshop'); ?></a></p>
