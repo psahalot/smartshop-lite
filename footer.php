@@ -27,7 +27,7 @@
     <div class="row copyright">
         <div class="col grid_12_of_12">
              <p class="alignleft">
-                 <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
+                 <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'AuthorURI' ); ?>">
                     <?php _e('Smart Shop WordPress theme by IdeaBox','smartshop'); ?>
                  </a>
              </p>  
