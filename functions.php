@@ -83,6 +83,8 @@ function smartshop_load_scripts() {
 
         // styles
         wp_enqueue_style('smartshop-style', get_template_directory_uri() . '/style.css');
+        
+          wp_enqueue_style( 'smartshop-woocommerce', trailingslashit( get_template_directory_uri() ) . 'assets/css/smartshop-woocommerce.css' , array(), '1.0', 'all' );
 }
 
 add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
@@ -277,3 +279,58 @@ function smartshop_filter_front_page_template( $template ) {
      return is_home() ? '' : $template ;
 }
 add_filter( 'frontpage_template', 'smartshop_filter_front_page_template' );
+
+
+// Remove default WooCommerce styles
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+// Display 24 products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
+
+add_theme_support( 'woocommerce' );
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+
+/**
+ * Hook in on activation
+ */
+global $pagenow;
+if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) add_action( 'init', 'smartshop_woocommerce_image_dimensions', 1 );
+ 
+/**
+ * Define image sizes
+ */
+function smartshop_woocommerce_image_dimensions() {
+  	$catalog = array(
+		'width' 	=> '349',	// px
+		'height'	=> '349',	// px
+		'crop'		=> 1 		// true
+	);
+ 
+	$single = array(
+		'width' 	=> '362',	// px
+		'height'	=> '362',	// px
+		'crop'		=> 1 		// true
+	);
+ 
+	$thumbnail = array(
+		'width' 	=> '150',	// px
+		'height'	=> '150',	// px
+		'crop'		=> 0 		// false
+	);
+ 
+	// Image sizes
+	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
+	update_option( 'shop_single_image_size', $single ); 		// Single product image
+	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
+}
+
+function woocommerce_output_related_products() {
+woocommerce_related_products(6,3); // Display 4 products in rows of 3
+}

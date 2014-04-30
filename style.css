@@ -15,7 +15,7 @@ Text Domain: smartshop
 
 /* CSS Resets */
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0;}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
 
 /* Border Box! */
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
@@ -180,8 +180,14 @@ li {
 
 select {
     max-width: 100%; 
+    padding:10px;
 }
 
+ins{
+    text-decoration:none;
+    background:#f84545;
+    color:#fff;
+}
 button
 input[type="submit"],
 input[type="button"],
@@ -277,6 +283,15 @@ h1 a, h2 a, h3 a, h4 a {
     color: #000;
 }
 
+h1 {
+    margin-bottom: 1.5rem;
+}
+
+p, ol, ul, dl, address {
+    margin: 0 0 24px 0;
+    margin: 0 0 2.4rem 0;
+    line-height: 1.7;
+}
 .clearfix:after {
     display: block;
     float: none;
@@ -374,6 +389,18 @@ h1 a, h2 a, h3 a, h4 a {
 #header-cart { 
     text-align: right;
     display: block;
+}
+
+.header-extras ul {
+    list-style: none;
+}
+
+.header-extras {
+    text-align: right;
+}
+
+#header-cart, .woo-cart-total {
+    margin-top: 25px;
 }
 
 
@@ -1636,6 +1663,37 @@ h4.single-product-price {
     background:#e55137;
     color:#fff;
 }
+
+.page-numbers li{
+    display:inline;
+}
+
+ul.page-numbers {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 2;
+}
+
+.content nav {
+    clear: both;
+    line-height: 2;
+    overflow: hidden;
+    padding: 30px 0px;
+    padding: 3rem 0rem;
+}
+
+li a.page-numbers, li span.page-numbers{
+    padding: 5px 20px;
+    padding: 0.5rem 2rem;
+    border: 1px solid #999;
+    text-decoration: none;
+}
+
+li a:hover.page-numbers{
+    background:#f84545;
+    color:#fff;
+}
 /********************************
 * comments
 ********************************/
@@ -2074,7 +2132,7 @@ IdeaBox Social Icons
     .main-navigation li ul li a{
         width:100%;
     }
-    
+
     .full-width .main-navigation li ul li a{
         width:100%;
     }

@@ -22,6 +22,9 @@ get_sidebar('front');
             <?php
             // Display featured products on front page
             get_template_part('content', 'frontproducts');
+            
+            	// Display featured products on front page
+            get_template_part('content', 'wooproducts');
 
             // Display featured posts on front page
             get_template_part('content', 'frontposts');

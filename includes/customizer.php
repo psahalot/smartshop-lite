@@ -188,7 +188,72 @@ function smartshop_customizer($wp_customize) {
             'priority' => 60,
         ));
     }
+    
+    
+    /* ========================================================= */
+        // Add new section for Woocommerce featured products on Front Page
+        /* ========================================================= */
+        $wp_customize->add_section('smartshop_woo_front_page_options', array(
+            'title' => __('Product On Front Page', 'smartshop'),
+            'description' => __('Settings for displaying featured products on Front Page', 'smartshop'),
+            'priority' => 60,
+        ));
+        // enable featured products on front page?
+        $wp_customize->add_setting('smartshop_woo_front_featured_products', array('default' => 0,
+             'sanitize_callback' => 'smartshop_sanitize_checkbox',
+            ));
+        
+        $wp_customize->add_control('smartshop_woo_front_featured_products', array(
+            'label' => __('Show featured products on Front Page', 'smartshop'),
+            'section' => 'smartshop_woo_front_page_options',
+            'priority' => 10,
+            'type' => 'checkbox',
+        ));
+        // Front featured products section headline
+        $wp_customize->add_setting('smartshop_woo_front_featured_title', array('default' => __('Latest Products', 'smartshop'),
+             'sanitize_callback' => 'sanitize_text_field',
+            ));
+        $wp_customize->add_control('smartshop_woo_front_featured_title', array(
+            'label' => __('Main Title', 'smartshop'),
+            'section' => 'smartshop_woo_front_page_options',
+            'settings' => 'smartshop_woo_front_featured_title',
+            'priority' => 10,
+        ));
+        
+        // store front/products archive description
+        $wp_customize->add_setting('smartshop_woo_store_archives_description', array(
+            'default' => null,
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control(new smartshop_customize_textarea_control($wp_customize, 'smartshop_woo_store_archives_description', array(
+            'label' => __('Featured Products Description', 'smartshop'),
+            'section' => 'smartshop_woo_front_page_options',
+            'settings' => 'smartshop_woo_store_archives_description',
+            'priority' => 40, 
+        )));
+        
+        // read more link
+        $wp_customize->add_setting('smartshop_woo_view_details', array(
+            'default' => __('View Details', 'smartshop'),
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+        $wp_customize->add_control('smartshop_woo_view_details', array(
+            'label' => __('Product Details Text', 'smartshop'),
+            'section' => 'smartshop_woo_front_page_options',
+            'settings' => 'smartshop_woo_view_details',
+            'priority' => 50,
+        ));
 
+        // store front item count
+        $wp_customize->add_setting('smartshop_woo_store_front_count', array('default' => 3,
+            'sanitize_callback' => 'smartshop_sanitize_integer',
+            ));
+        $wp_customize->add_control('smartshop_woo_store_front_count', array(
+            'label' => __('Number of products to display', 'smartshop'),
+            'section' => 'smartshop_woo_front_page_options',
+            'settings' => 'smartshop_woo_store_front_count',
+            'priority' => 20,
+        ));
 
     // Add new section for displaying Featured Posts on Front Page
     $wp_customize->add_section('smartshop_front_page_post_options', array(
@@ -395,7 +460,14 @@ function smartshop_color_style() {
                 .sidebar .gform_footer input[type="submit"],
                 #commentsubmit,
                 .hentry #edd_login_form input[type="submit"],
-                #commentsubmit, .form-submit input[type="submit"] {
+                #commentsubmit, .form-submit input[type="submit"],
+                .onsale,
+                .woocommerce-page a.button:hover,
+                .woocommerce button.button.alt:hover,
+                ins,
+                li a:hover.page-numbers,
+                .woocommerce input.button.alt:hover,
+                .woocommerce #review_form #respond .form-submit input:hover{
                     background: <?php echo $primary_color; ?> !important;
                     color: <?php echo $secondary_color; ?> !important; 
                 }
@@ -405,6 +477,10 @@ function smartshop_color_style() {
                 .hentry #edd_login_form input[type="submit"] {
                     color:<?php echo $secondary_color; ?> !important;
                 }
+                
+                .woocommerce .woocommerce-message{
+                    border-top:3px solid <?php echo $primary_color; ?> !important;
+                }
 
                  #home-widgets .fa, 
                 .hentry .read-more,
@@ -412,7 +488,12 @@ function smartshop_color_style() {
                 .sidebar li.widget ul a:hover,
                 #logo-wrap h1 a,
                 .gform_wrapper .gfield_required,
-                .hentry a:hover {
+                .hentry a:hover,
+                .star-rating span:before,
+                .woocommerce-message:before,
+                .woocommerce-info:before,
+                #header .cart-contents:after,
+                .fa-shopping-cart:before{
                     color:<?php echo $primary_color; ?> !important;
                 }
 
