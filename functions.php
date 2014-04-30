@@ -334,3 +334,5 @@ function smartshop_woocommerce_image_dimensions() {
 function woocommerce_output_related_products() {
 woocommerce_related_products(6,3); // Display 4 products in rows of 3
 }
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
