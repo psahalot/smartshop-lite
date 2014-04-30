@@ -2267,7 +2267,8 @@ IdeaBox Social Icons
         display:block;
     }
 
-    #header-cart
+    #header-cart,
+    .woo-cart-total
     {
         text-align:center;
     }
