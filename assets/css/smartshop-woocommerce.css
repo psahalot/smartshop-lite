@@ -752,6 +752,11 @@ ul.products li.product .button.added:after {
 .single-product .woocommerce-tabs{
     clear:both;
 }
+
+.single-product ul.products li.product{
+    width:22.1%;
+    margin-right:3.85%;
+}
 .shipping_calculator h2 {
     font-size: 1.142em;
 }
@@ -1514,9 +1519,9 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
         content: "\f044";
     }
     ul.products li.product {
-        margin-right: 3.85%;
+        margin-right: 3.8%;
         clear: none;
-        width: 22.1%;
+        width: 30.75%;
     }
     ul.products li.product:nth-child(2n) {
         float: left;
@@ -1642,6 +1647,11 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
     .woocommerce-checkout input[type="text"]{
         width:100%;
     }
+    
+    .single-product ul.products li.product{
+        margin-right:0;
+        width:48%;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -1651,7 +1661,7 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
 }
 @media only screen and (max-width: 520px) {
     ul.products li.product{
-        width:100%;
+        width:100% !important;
         float:none;
     }
 }
