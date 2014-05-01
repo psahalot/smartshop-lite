@@ -716,6 +716,7 @@ ul.products li.product .button.added:after {
 }
 .single-product .quantity {
     margin: 0 1em 0 0;
+    padding:5px;
 }
 .single-product .product_meta {
     margin: 0 0 2.244em;
@@ -1232,6 +1233,10 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
     border:1px solid #ccc;
 }
 
+.woocommerce-cart .button:hover{
+    background:#f84545;
+    color:#fff;
+}
 .woocommerce-cart select,
 .woocommerce-cart input{
     padding:10px;
@@ -1370,18 +1375,18 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
 }
 
 .woocommerce button.button.alt{
-    background:#fff;
-    border:1px solid #333;
-    color:#333;
+    background:#f84545;
+    border:3px solid #333;
+    color:#fff;
     font-weight:400;
     border-radius:0;
-    padding:0.8rem 1.5rem;
+    padding:0.5rem 1.5rem;
     font-size:16px;
 }
 
 .woocommerce button.button.alt:hover{
-    background:#f84545;
-    color:#fff;
+    background:#fff;
+    color:#333;
 }
 
 .woocommerce #content div.product span.price{
@@ -1509,9 +1514,9 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
         content: "\f044";
     }
     ul.products li.product {
-        margin-right: 3.8%;
+        margin-right: 3.85%;
         clear: none;
-        width: 30.75%;
+        width: 22.1%;
     }
     ul.products li.product:nth-child(2n) {
         float: left;
@@ -1590,6 +1595,7 @@ div.pp_woocommerce #respond #commentform .comment-form-rating {
     }
     .cart-collaterals .cross-sells {
         float: left;
+        display:none;
     }
     .cart-collaterals .cross-sells ul.products li.product {
         width: 48%;

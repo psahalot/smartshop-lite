@@ -1610,6 +1610,13 @@ h4.single-product-price {
     margin-bottom:10px;
 }
 
+.edd-cart-added-alert{
+    color:#333;
+}
+
+#edd-purchase-button{
+    border-radius:0px;
+}
 /********************************
 * pagination
 ********************************/

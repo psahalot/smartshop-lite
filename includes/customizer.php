@@ -463,11 +463,12 @@ function smartshop_color_style() {
                 #commentsubmit, .form-submit input[type="submit"],
                 .onsale,
                 .woocommerce-page a.button:hover,
-                .woocommerce button.button.alt:hover,
+                .woocommerce button.button.alt,
                 ins,
                 li a:hover.page-numbers,
                 .woocommerce input.button.alt:hover,
-                .woocommerce #review_form #respond .form-submit input:hover{
+                .woocommerce #review_form #respond .form-submit input:hover,
+                .woocommerce-cart .button:hover{
                     background: <?php echo $primary_color; ?> !important;
                     color: <?php echo $secondary_color; ?> !important; 
                 }
