@@ -383,6 +383,7 @@ p, ol, ul, dl, address {
 #logo-wrap .site-description
 {
     color:#333;
+    margin-bottom:10px;
 }
 
 
@@ -403,6 +404,9 @@ p, ol, ul, dl, address {
     margin-top: 25px;
 }
 
+.woo-cart-total{
+    margin-bottom:10px;
+}
 
 .header-widget
 {
@@ -822,39 +826,23 @@ button:active {
 }
 
 /********************************
-     Gravity Form on Sidebar
+* sidebar
 ********************************/
-.sidebar li.gform_widget li.gfield
+.sidebar .widget .gform_wrapper li
 {
-    border-bottom:0px;
-    padding-bottom:0px;
+    border-bottom:0;
+    padding:0;
 }
 
-.sidebar li.gform_widget
+.sidebar .widget.gform_widget
 {
     background:#2a2a2a;
     color:#fff;
-    padding:20px 30px;
+    padding:20px 30px !important;
     list-style:none;
 }
 
-.sidebar li.gform_widget .gform_fields .gfield .ginput_container .gfield_radio li
-{
-    border:none;
-}
-
-.home-sidebar .sidebar li.gform_widget,
-.right-sidebar .sidebar li.gform_widget
-{
-    padding:20px !important;
-}
-
-.right-sidebar .sidebar li.gform_widget
-{
-    margin-right:20px;
-}
-.home-sidebar .sidebar li.gform_widget h3.widget_title,
-.right-sidebar .sidebar li.gform_widget h3.widget_title
+.sidebar .gform_widget h3.widget_title
 {
     margin:10px 0;
     text-align:center;
@@ -876,7 +864,6 @@ button:active {
     border:none;
 }
 
-
 .sidebar .gform_wrapper .top_label .gfield_label{
     font-weight:normal;
 }
@@ -886,6 +873,11 @@ button:active {
 {
     font-size:20px;
     font-weight:300;
+}
+
+.sidebar .gform_footer input[type="submit"]:hover{
+    background:#fff !important;
+    color:#333 !important;
 }
 
 /********************************
@@ -1385,8 +1377,12 @@ cite
     font-size:13px;
     padding-top:10px;
     padding-bottom:20px;
+    text-align:center;
 }
 
+.copyright p{
+    margin:20px 0;
+}
 /*******************************/
 /* Home page featured products */
 /*******************************/
