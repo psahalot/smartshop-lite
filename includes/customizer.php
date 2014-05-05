@@ -495,7 +495,8 @@ function smartshop_color_style() {
                 .woocommerce-info:before,
                 #header .cart-contents:after,
                 .fa-shopping-cart:before,
-                .product h2:hover{
+                .product h2:hover,
+                .required{
                     color:<?php echo $primary_color; ?> !important;
                 }
 

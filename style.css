@@ -432,6 +432,9 @@ p, ol, ul, dl, address {
 
 }
 
+.main-navigation{
+    margin:0;
+}
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
     border-bottom: 1px solid #ededed;
@@ -1377,11 +1380,22 @@ cite
     font-size:13px;
     padding-top:10px;
     padding-bottom:20px;
-    text-align:center;
+    clear:none;
+    width:90%;
 }
 
 .copyright p{
     margin:20px 0;
+}
+
+.copyright .left{
+    width:50%;
+    float:left;
+}
+.copyright .right{
+    width:50%;
+    float:right;
+    text-align:right;
 }
 /*******************************/
 /* Home page featured products */
@@ -1443,6 +1457,9 @@ cite
     bottom: 0;
 }
 
+.required{
+    color:#f84545;
+}
 
 /********************************
 * store template
@@ -2357,6 +2374,12 @@ IdeaBox Social Icons
     }
     .col {
         margin: 0;
+    }
+    
+    .copyright .left,.copyright .right{
+        width:100%;
+        float:none;
+        text-align:center;
     }
 }
 
