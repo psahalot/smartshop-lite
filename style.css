@@ -20,6 +20,9 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 /* Border Box! */
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 
+html {
+	font-size: 62.5%; /* 10px browser default */
+}
 /* ==========================================================================
    Column & Row Setup
    ========================================================================== */
@@ -492,7 +495,7 @@ p, ol, ul, dl, address {
 
 .main-navigation li ul li a {
     background: #3DBFD9;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     display: block;
     font-size: 14px;
     line-height: 2;
@@ -1671,7 +1674,7 @@ h4.single-product-price {
 
 .page-pagination a
 {
-    padding:5px 8px;
+    padding:5px 12px;
     color:#333;
     text-align:left;
     border:1px solid #ccc;
@@ -1795,7 +1798,7 @@ li a:hover.page-numbers{
 }
 #commentform label {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
 }
 #commentform input {
     width: 40%;
@@ -1821,14 +1824,8 @@ li a:hover.page-numbers{
 #commentform textarea {
     background: #FFF;
     position: relative;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #E3E3E3;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -1848,7 +1845,7 @@ li a:hover.page-numbers{
 #commentsubmit,
 .form-submit input[type="submit"] {
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     padding: 8px 0px;
     width: 100px !important;
