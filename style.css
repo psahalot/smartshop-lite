@@ -15,11 +15,14 @@ Text Domain: smartshop
 
 /* CSS Resets */
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;margin:0;padding:0;}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
 
 /* Border Box! */
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 
+html {
+	font-size: 62.5%; /* 10px browser default */
+}
 /* ==========================================================================
    Column & Row Setup
    ========================================================================== */
@@ -180,8 +183,14 @@ li {
 
 select {
     max-width: 100%; 
+    padding:10px;
 }
 
+ins{
+    text-decoration:none;
+    background:#f84545;
+    color:#fff;
+}
 button
 input[type="submit"],
 input[type="button"],
@@ -277,6 +286,15 @@ h1 a, h2 a, h3 a, h4 a {
     color: #000;
 }
 
+h1 {
+    margin-bottom: 1.5rem;
+}
+
+p, ol, ul, dl, address {
+    margin: 0 0 24px 0;
+    margin: 0 0 2.4rem 0;
+    line-height: 1.7;
+}
 .clearfix:after {
     display: block;
     float: none;
@@ -368,6 +386,7 @@ h1 a, h2 a, h3 a, h4 a {
 #logo-wrap .site-description
 {
     color:#333;
+    margin-bottom:10px;
 }
 
 
@@ -376,6 +395,21 @@ h1 a, h2 a, h3 a, h4 a {
     display: block;
 }
 
+.header-extras ul {
+    list-style: none;
+}
+
+.header-extras {
+    text-align: right;
+}
+
+#header-cart, .woo-cart-total {
+    margin-top: 25px;
+}
+
+.woo-cart-total{
+    margin-bottom:10px;
+}
 
 .header-widget
 {
@@ -401,6 +435,9 @@ h1 a, h2 a, h3 a, h4 a {
 
 }
 
+.main-navigation{
+    margin:0;
+}
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
     border-bottom: 1px solid #ededed;
@@ -458,7 +495,7 @@ h1 a, h2 a, h3 a, h4 a {
 
 .main-navigation li ul li a {
     background: #3DBFD9;
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     display: block;
     font-size: 14px;
     line-height: 2;
@@ -795,39 +832,23 @@ button:active {
 }
 
 /********************************
-     Gravity Form on Sidebar
+* sidebar
 ********************************/
-.sidebar li.gform_widget li.gfield
+.sidebar .widget .gform_wrapper li
 {
-    border-bottom:0px;
-    padding-bottom:0px;
+    border-bottom:0;
+    padding:0;
 }
 
-.sidebar li.gform_widget
+.sidebar .widget.gform_widget
 {
     background:#2a2a2a;
     color:#fff;
-    padding:20px 30px;
+    padding:20px 30px !important;
     list-style:none;
 }
 
-.sidebar li.gform_widget .gform_fields .gfield .ginput_container .gfield_radio li
-{
-    border:none;
-}
-
-.home-sidebar .sidebar li.gform_widget,
-.right-sidebar .sidebar li.gform_widget
-{
-    padding:20px !important;
-}
-
-.right-sidebar .sidebar li.gform_widget
-{
-    margin-right:20px;
-}
-.home-sidebar .sidebar li.gform_widget h3.widget_title,
-.right-sidebar .sidebar li.gform_widget h3.widget_title
+.sidebar .gform_widget h3.widget_title
 {
     margin:10px 0;
     text-align:center;
@@ -849,7 +870,6 @@ button:active {
     border:none;
 }
 
-
 .sidebar .gform_wrapper .top_label .gfield_label{
     font-weight:normal;
 }
@@ -859,6 +879,11 @@ button:active {
 {
     font-size:20px;
     font-weight:300;
+}
+
+.sidebar .gform_footer input[type="submit"]:hover{
+    background:#fff !important;
+    color:#333 !important;
 }
 
 /********************************
@@ -1358,8 +1383,23 @@ cite
     font-size:13px;
     padding-top:10px;
     padding-bottom:20px;
+    clear:none;
+    width:90%;
 }
 
+.copyright p{
+    margin:20px 0;
+}
+
+.copyright .left{
+    width:50%;
+    float:left;
+}
+.copyright .right{
+    width:50%;
+    float:right;
+    text-align:right;
+}
 /*******************************/
 /* Home page featured products */
 /*******************************/
@@ -1420,6 +1460,9 @@ cite
     bottom: 0;
 }
 
+.required{
+    color:#f84545;
+}
 
 /********************************
 * store template
@@ -1583,6 +1626,13 @@ h4.single-product-price {
     margin-bottom:10px;
 }
 
+.edd-cart-added-alert{
+    color:#333;
+}
+
+#edd-purchase-button{
+    border-radius:0px;
+}
 /********************************
 * pagination
 ********************************/
@@ -1624,7 +1674,7 @@ h4.single-product-price {
 
 .page-pagination a
 {
-    padding:5px 8px;
+    padding:5px 12px;
     color:#333;
     text-align:left;
     border:1px solid #ccc;
@@ -1634,6 +1684,37 @@ h4.single-product-price {
 {
 
     background:#e55137;
+    color:#fff;
+}
+
+.page-numbers li{
+    display:inline;
+}
+
+ul.page-numbers {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 2;
+}
+
+.content nav {
+    clear: both;
+    line-height: 2;
+    overflow: hidden;
+    padding: 30px 0px;
+    padding: 3rem 0rem;
+}
+
+li a.page-numbers, li span.page-numbers{
+    padding: 5px 20px;
+    padding: 0.5rem 2rem;
+    border: 1px solid #999;
+    text-decoration: none;
+}
+
+li a:hover.page-numbers{
+    background:#f84545;
     color:#fff;
 }
 /********************************
@@ -1717,7 +1798,7 @@ h4.single-product-price {
 }
 #commentform label {
     display: block;
-    font-size: 11px;
+    font-size: 16px;
 }
 #commentform input {
     width: 40%;
@@ -1743,14 +1824,8 @@ h4.single-product-price {
 #commentform textarea {
     background: #FFF;
     position: relative;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #E3E3E3;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
@@ -1770,7 +1845,7 @@ h4.single-product-price {
 #commentsubmit,
 .form-submit input[type="submit"] {
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     padding: 8px 0px;
     width: 100px !important;
@@ -2074,7 +2149,7 @@ IdeaBox Social Icons
     .main-navigation li ul li a{
         width:100%;
     }
-    
+
     .full-width .main-navigation li ul li a{
         width:100%;
     }
@@ -2209,7 +2284,8 @@ IdeaBox Social Icons
         display:block;
     }
 
-    #header-cart
+    #header-cart,
+    .woo-cart-total
     {
         text-align:center;
     }
@@ -2295,6 +2371,12 @@ IdeaBox Social Icons
     }
     .col {
         margin: 0;
+    }
+    
+    .copyright .left,.copyright .right{
+        width:100%;
+        float:none;
+        text-align:center;
     }
 }
 
