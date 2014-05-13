@@ -1,10 +1,10 @@
 === SmartShop ===
-Contributors: Puneet Sahalot
+Contributors: Puneet Sahalot, Nidhi Jain
 Author URI: http://ideaboxthemes.com
 Tags: red, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.3
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,13 +71,27 @@ SmartShop utilizes the following awesomeness:
 [Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
 
 
-== Changelog ==
-- Fixed text domain issues for localization
-- Added licensing details for third party scripts
-- Improved front page file structure
+
+= 1.5.1 =
+- Updated 1rem to 10px
+- Updated button and form elements styling
+- Fixed margin for featured images
+
+= 1.5 = 
+- Upated file structure 
+- Improved WooCommerce support and styling
+
+= 1.4 = 
+- Added WooCommerce support
+- Updated featured image and license details 
+
+= 1.2 =
 - Added RTL support
-- Added featured image and license details 
 - Fixed comments on page issue
+
+= 1.1 =
+- Fixed localizaiton issues
+- Fixed incorrect code
 
 = 1.0 =
 - Initial version
