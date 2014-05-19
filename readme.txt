@@ -72,12 +72,10 @@ SmartShop utilizes the following awesomeness:
 
 
 
-= 1.5.1 =
+= 1.5 =
 - Updated 1rem to 10px
 - Updated button and form elements styling
 - Fixed margin for featured images
-
-= 1.5 = 
 - Upated file structure 
 - Improved WooCommerce support and styling
 
