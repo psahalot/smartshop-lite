@@ -49,8 +49,8 @@ if (!function_exists('smartshop_theme_setup')) {
             // Background image default
             'default-image' => '',
             'header-text' => 'true',
-            'flex-height' => 'true',
-            'flex-width' => 'true'
+            'Flex-height' => 'true',
+            'Flex-width' => 'true'
         )); 
 
         //adds post thumbnail support - new in Wordpress 2.9

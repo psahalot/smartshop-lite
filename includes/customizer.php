@@ -402,7 +402,7 @@ function smartshop_sanitize_escaping( $input) {
 /*
  * Sanitize Checkbox input values
  * 
- * @since SmartShop 1.2
+ * @since Flex 1.0
  */
 function smartshop_sanitize_checkbox( $input ) {
     if ( $input ) {
