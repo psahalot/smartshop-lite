@@ -95,6 +95,9 @@ add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
 function smartshop_load_fonts() {
     
+    // Load Open Sans from Google Fonts
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,400,700', array(),'1.0','all');
+    
     // Register and enqueue our icon font
     // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
     wp_enqueue_style('font-awesome', trailingslashit(get_template_directory_uri()) . 'assets/css/font-awesome.min.css', array(), '4.0.3', 'all');
