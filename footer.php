@@ -28,8 +28,8 @@
         <div class="col grid_12_of_12">
              <div class="smallprint left">
                 <p>
-                   <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' ); ?>">
-                            <?php _e('Smartshop WordPress theme by IdeaBox','notepad'); ?>
+                   <a href="<?php $smartshop = wp_get_theme(); echo $smartshop->get( 'ThemeURI' ); ?>">
+                            <?php _e('Smartshop WordPress theme by IdeaBox','smartshop'); ?>
                     </a>
                 </p>
             </div>

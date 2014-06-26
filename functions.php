@@ -49,9 +49,11 @@ if (!function_exists('smartshop_theme_setup')) {
             // Background image default
             'default-image' => '',
             'header-text' => 'true',
-            'flex-height' => 'true',
-            'flex-width' => 'true'
+            'Flex-height' => 'true',
+            'Flex-width' => 'true'
         )); 
+        
+        add_theme_support( 'woocommerce' );
 
         //adds post thumbnail support - new in Wordpress 2.9
         add_theme_support('post-thumbnails');
@@ -81,8 +83,8 @@ function smartshop_load_scripts() {
         // Adds JavaScript for handling the navigation menu hide-and-show behavior.
         wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
 
-        // styles
-        wp_enqueue_style('smartshop-style', get_template_directory_uri() . '/style.css');
+        // Enqueue the default WordPress stylesheet
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.5', 'all' );
         
         wp_enqueue_style( 'smartshop-woocommerce', trailingslashit( get_template_directory_uri() ) . 'assets/css/smartshop-woocommerce.css' , array(), '1.0', 'all' );
 }
@@ -94,6 +96,9 @@ add_action('wp_enqueue_scripts', 'smartshop_load_scripts');
 add_action('wp_enqueue_scripts', 'smartshop_load_fonts');
 
 function smartshop_load_fonts() {
+    
+    // Load Open Sans from Google Fonts
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,400,700', array(),'1.0','all');
     
     // Register and enqueue our icon font
     // We're using the awesome Font Awesome icon font. http://fortawesome.github.io/Font-Awesome
@@ -287,7 +292,7 @@ add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 // Display 24 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
 
-add_theme_support( 'woocommerce' );
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
@@ -329,10 +334,6 @@ function smartshop_woocommerce_image_dimensions() {
 	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
 	update_option( 'shop_single_image_size', $single ); 		// Single product image
 	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
-}
-
-function woocommerce_output_related_products() {
-woocommerce_related_products(4,4); // Display 4 products in rows of 3
 }
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
