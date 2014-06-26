@@ -70,7 +70,12 @@ SmartShop utilizes the following awesomeness:
 [Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
 [Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
 
-
+= 1.5.1 =
+- Escaping for footer text
+- Added copyright notice to style.css
+- Fixed home_url() to esc_url(home_url(/))
+- Fixed incorrect function for default stylesheet
+- Fixed incorrect variable in footer.php 
 
 = 1.5 =
 - Updated 1rem to 10px
