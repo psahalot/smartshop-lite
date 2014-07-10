@@ -4,9 +4,22 @@ Author URI: http://ideaboxthemes.com
 Tags: red, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.5
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Smartshop WordPress Theme, Copyright (C) 2014 IdeaBox Themes
+Smartshop is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
 
 SmartShop is a mobile responsive WordPress theme with unlimited colors, full-width and boxed layout options. 
 It supports Easy Digital Downloads plugin so you can setup a simple business webiste or even integrate an online store for selling digital products. 
@@ -60,15 +73,21 @@ Install by uploading the theme zip file:
 
 
 
-== Credits ==
+== License ==
+
+Smartshop WordPress Theme is derived from Underscores WordPress Theme, Copyright 2013 Automattic, Inc.
+Smartshop WordPress Theme is distributed under the terms of the GNU GPL
+
+[Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
+[Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
 
 Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, help and code improvements 
 
+== Credits ==
 SmartShop utilizes the following awesomeness:
-
+Smartshop uses the following images licensed under Creative Commons public domain deed CC0
 [Featured Image] by Alejandro Escamilla (http://unsplash.com/post/51495156548/download-by-alejandro-escamilla) , which is licensed under CC0 1.0 Universal http://creativecommons.org/publicdomain/zero/1.0 
-[Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
-[Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
+
 
 = 1.5.1 =
 - Escaping for footer text
