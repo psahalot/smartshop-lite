@@ -78,8 +78,13 @@ Install by uploading the theme zip file:
 Smartshop WordPress Theme is derived from Underscores WordPress Theme, Copyright 2013 Automattic, Inc.
 Smartshop WordPress Theme is distributed under the terms of the GNU GPL
 
-[Font Awesome](http://fortawesome.github.io/Font-Awesome) icon font, which is licensed under SIL Open Font License and MIT License
-[Open Sans font](http://www.google.com/fonts/specimen/Open+Sans), which is licensed under SIL Open Font License 1.1
+Font Awesome Copyright Dave Gandy
+Font Awesome is licensed under the MIT license
+source: http://fortawesome.github.io/Font-Awesome
+
+Open Sans font Copyright Steve Metteson
+Open Sans font is licensed under Apache License 2.0
+source: http://www.google.com/fonts/specimen/Open+Sans
 
 Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, help and code improvements 
 
