@@ -20,13 +20,36 @@ get_sidebar('front');
         <div class="content clearfix">
 
             <?php
-            // Display featured products on front page
+            
+            /* Display featured products using EDD on front page
+             * This section works only when the setting 
+             * has been checked in Theme Customizer
+             * 
+             * Theme customizer setting for EDD appears only when 
+             * Easy Digital Downloads plugin is installed and active. 
+             * 
+            */
             get_template_part('content', 'frontproducts');
             
-            	// Display featured products on front page
+            
+            /* Display featured products using WooCommerce on front page
+             * This section works when the setting 
+             * has been checked in Theme Customizer
+             * 
+             * Theme customizer setting for WooCommerce appears only when 
+             * WooCommerce plugin is installed and active. 
+             * 
+            */
+            
             get_template_part('content', 'wooproducts');
 
-            // Display featured posts on front page
+            
+            /* Display featured posts on front page
+             * This section works when "Front Page Featured Posts" setting 
+             * has been checked in Theme Customizer
+             * 
+            */
+            
             get_template_part('content', 'frontposts');
             ?>
 
