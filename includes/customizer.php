@@ -30,14 +30,6 @@ function smartshop_customize_register($wp_customize) {
 
 add_action('customize_register', 'smartshop_customize_register', 12);
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function smartshop_customize_preview_js() {
-    wp_enqueue_script('smartshop_customizer', get_template_directory_uri() . '/js/customizer.js', array('customize-preview'), '20130508', true);
-}
-
-add_action('customize_preview_init', 'smartshop_customize_preview_js');
 
 function smartshop_customizer($wp_customize) {
 
@@ -189,6 +181,7 @@ function smartshop_customizer($wp_customize) {
         ));
     }
     
+    if(class_exists('woocommerce')) {
     
     /* ========================================================= */
         // Add new section for Woocommerce featured products on Front Page
@@ -254,7 +247,7 @@ function smartshop_customizer($wp_customize) {
             'settings' => 'smartshop_woo_store_front_count',
             'priority' => 20,
         ));
-
+    }
     // Add new section for displaying Featured Posts on Front Page
     $wp_customize->add_section('smartshop_front_page_post_options', array(
         'title' => __('Front Page Featured Posts', 'smartshop'),
@@ -487,7 +480,6 @@ function smartshop_color_style() {
                 .hentry .read-more,
                 .product .title:hover,
                 .sidebar li.widget ul a:hover,
-                #logo-wrap h1 a,
                 .gform_wrapper .gfield_required,
                 .hentry a:hover,
                 .star-rating span:before,
@@ -512,3 +504,13 @@ function smartshop_color_style() {
 	<?php
 }
 add_action('wp_head','smartshop_color_style');
+
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function smartshop_customize_preview_js() {
+    wp_enqueue_script('smartshop_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array('jquery', 'customize-preview'), rand() , true);
+}
+
+add_action('customize_preview_init', 'smartshop_customize_preview_js');

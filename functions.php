@@ -75,17 +75,20 @@ add_action('after_setup_theme', 'smartshop_theme_setup');
 // Load Scripts for responsive navigation, media queries, comments and stheme stylesheet.
 function smartshop_load_scripts() {
 
-    if (is_singular()) {
-        wp_enqueue_script('comment-reply');
-    }
+        
+        // Enqueue the default WordPress stylesheet
+	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.5', 'all' );
+        
         wp_enqueue_script('smartshop-media-queries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js');
 
         // Adds JavaScript for handling the navigation menu hide-and-show behavior.
         wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
 
-        // Enqueue the default WordPress stylesheet
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), '1.5', 'all' );
         
+        if (is_singular()) {
+            wp_enqueue_script('comment-reply');
+        }
+    
         wp_enqueue_style( 'smartshop-woocommerce', trailingslashit( get_template_directory_uri() ) . 'assets/css/smartshop-woocommerce.css' , array(), '1.0', 'all' );
 }
 
@@ -337,3 +340,4 @@ function smartshop_woocommerce_image_dimensions() {
 }
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+

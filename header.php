@@ -1,10 +1,10 @@
 <?php
 global $edd_options; // EDD plugin settings
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 
-    <head profile="http://gmpg.org/xfn/11">
+    <head>
         <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
         <title><?php wp_title('&laquo;', true, 'right'); ?> </title>
@@ -71,9 +71,9 @@ global $edd_options; // EDD plugin settings
             </div><!-- end .container#header-->
             <div class="container" id="navigation-wrap">
                 <div class="row nav-collapse" id="main-nav">
-                    <ul id="site-navigation" class="main-navigation">
+                    <div id="site-navigation" class="main-navigation">
                         <h3 class="menu-toggle"><?php _e('Menu', 'smartshop'); ?></h3>
                         <?php wp_nav_menu(array('theme_location' => 'main_nav', 'menu_class' => 'nav-menu')); ?>
-                    </ul>
+                    </div>
                 </div> <!-- end .nav-collaps#main-nav -->
             </div><!--end .container#navigation-wrap-->

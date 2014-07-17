@@ -43,7 +43,12 @@
 			$('.site-title a').css('color', to );
 		} );
 	} );
-	
+	//Update site Title color in real time...
+	wp.customize( 'smartshop_theme_primary_color', function( value ) {
+		value.bind( function( to ) {
+			$('#home-cta-area').css('background', to );
+		} );
+	} );
 	
 	
 } )( jQuery );
