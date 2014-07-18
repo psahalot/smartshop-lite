@@ -4,7 +4,7 @@ Author URI: http://ideaboxthemes.com
 Tags: red, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,11 @@ Thanks to https://profiles.wordpress.org/cyberchimpscode for all the advice, hel
 SmartShop utilizes the following awesomeness:
 Smartshop uses the following images licensed under Creative Commons public domain deed CC0
 [Featured Image] by Alejandro Escamilla (http://unsplash.com/post/51495156548/download-by-alejandro-escamilla) , which is licensed under CC0 1.0 Universal http://creativecommons.org/publicdomain/zero/1.0 
+
+
+== Changelog ==
+= 1.5.4 = 
+- Fixed invalid sidebar markup
 
 = 1.5.3 =
 - Fixed live preview in customizer
