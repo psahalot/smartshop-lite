@@ -341,3 +341,13 @@ function smartshop_woocommerce_image_dimensions() {
 
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 
+
+function smartshop_admin_notice(){
+    global $pagenow;
+    if ( $pagenow == 'themes.php' ) { ?>
+          <div class="updated">
+              <p>This theme comes with <a href="<?php echo admin_url('customize.php'); ?>">Live Theme Customizer</a> to configure settings and setup home page content. <br/> You can upgrade to <a href="http://ideaboxthemes.com/themes/smartshop-wordpress-theme/">Pro version</a> for more features, support and upgrades.</p>
+         </div>
+   <?php  }
+}
+add_action('admin_notices', 'smartshop_admin_notice');
