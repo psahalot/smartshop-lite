@@ -25,7 +25,7 @@
 
                             <p class="postinfo">
                                 <?php the_tags( __('Tags:', 'smartshop') . ' ', __(', ', 'smartshop'), '<br />' ); ?>
-                                <?php printf( __( 'Posted in %s', 'smartshop' ), the_category( __( ', ', 'smartshop' ) ) ); ?> 
+                                <?php printf( __( 'Posted in %s', 'smartshop' ), get_the_category_list( __( ', ', 'smartshop' ) ) ); ?> 
                                 <?php printf(_n( 'One comment', '%s comments', get_comments_number(), 'smartshop'), number_format_i18n( get_comments_number() )); ?>
                             </p>
 

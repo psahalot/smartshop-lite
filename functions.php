@@ -82,7 +82,7 @@ function smartshop_load_scripts() {
         wp_enqueue_script('smartshop-media-queries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js');
 
         // Adds JavaScript for handling the navigation menu hide-and-show behavior.
-        wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '1.0', true);
+        wp_enqueue_script('smartshop-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), '1.0', true);
 
         
         if (is_singular()) {
